@@ -390,6 +390,5 @@ for app in "Activity Monitor" \
 	killall "${app}" &> /dev/null
 done
 
-echo "Done. Restarting in 5 seconds to enable all settings..."
-sleep 5
-sudo shutdown -r now
+echo "Done. Restarting in 1 minute to enable all settings..."
+sudo shutdown -r +1

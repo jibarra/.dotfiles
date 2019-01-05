@@ -1,0 +1,9 @@
+[user]
+	email = developer@icepicky.com
+	name = Jose Ibarra
+[color]
+	ui = auto
+[commit]
+	template = ~/.gitmessage.txt
+[core]
+	excludesfile = ~/.gitignore_global

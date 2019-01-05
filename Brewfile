@@ -1,5 +1,4 @@
 # Taps
-tap 'dteoh/sqa'
 tap 'caskroom/cask'
 tap 'homebrew/bundle'
 
@@ -8,7 +7,6 @@ tap 'homebrew/bundle'
 brew 'coreutils'
 brew 'git'
 brew 'grep'
-brew 'mackup'
 brew 'mas'
 brew 'trash'
 brew 'zsh'
@@ -47,8 +45,8 @@ mas 'GarageBand', id: 682658836
 mas 'iMovie', id: 408981434
 mas 'Xcode', id: 497799835
 mas 'PiPifier', id: 1160374471
-mas Keynote, id: 409183694
-mas Pages, id: 409201541
-mas iA Writer, id: 775737590
+mas 'Keynote', id: 409183694
+mas 'Pages', id: 409201541
+mas 'iA Writer', id: 775737590
 mas 'Day One', id: 1055511498
 mas 'Numbers', id: 409203825

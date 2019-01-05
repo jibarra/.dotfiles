@@ -1,0 +1,6 @@
+subject line
+
+what happened
+
+Resolves: #issue
+See also: #commit

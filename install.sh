@@ -16,10 +16,10 @@ brew bundle
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
 
-# Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
-rm -rf $HOME/.zshrc
-ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
+source defaults.sh
+
+source link_dotfiles.sh
 
 # Set macOS preferences
-# We will run this last because this will reload the shell
-source .macos
+# Ran last because it restarts the shell and computer
+source osx_defaults.sh
