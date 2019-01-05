@@ -1,4 +1,6 @@
 for DOTFILE in `find ~/.dotfiles/shell`
 do
-  [ -f “$DOTFILE” ] && source “$DOTFILE”
+  if [[ "$DOTFILE" != *".zshrc"* ]]; then
+    [ -f "$DOTFILE" ] && source "$DOTFILE"
+  fi
 done
