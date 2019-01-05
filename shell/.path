@@ -1,2 +1,3 @@
+# Load bin folders
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export PATH="$(brew --prefix)/sbin:$PATH"
