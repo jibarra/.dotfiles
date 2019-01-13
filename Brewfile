@@ -14,6 +14,7 @@ brew 'zsh'
 # Development
 brew 'hugo'
 brew 'python3'
+brew 'zsh-syntax-highlighting'
 
 # GUI applications
 cask '1password'
