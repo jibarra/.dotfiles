@@ -278,9 +278,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 379 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>384 56 928 394 0 0 1440 877 </string>
+	<string>498 285 928 394 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>428 199 665 477 0 0 1440 877 </string>
+	<string>158 202 665 477 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>518 170 665 477 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -375,13 +375,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.019755776971578598</real>
+				<real>0.015686274509803921</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.722900390625</real>
+				<real>0.72549019607843135</real>
 				<key>Red Component</key>
-				<real>0.47291153719902468</real>
+				<real>0.47058823529411764</real>
 			</dict>
 			<key>Ansi 3 Color</key>
 			<dict>
