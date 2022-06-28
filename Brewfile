@@ -19,8 +19,7 @@ brew 'zsh-syntax-highlighting'
 # GUI applications
 cask '1password'
 cask 'alfred'
-cask 'caffeine'
-cask 'cheatsheet'
+cask 'balance-lock'
 cask 'dash'
 cask 'discord'
 cask 'dropbox'
@@ -29,21 +28,27 @@ cask 'flux'
 cask 'google-chrome'
 cask 'intellij-idea'
 cask 'iterm2'
+cask 'karabiner-elements'
 cask 'microsoft-office'
 cask 'notion'
+cask 'rectangle'
+cask 'sequel-pro'
 cask 'sketch'
 cask 'slack'
 cask 'spectacle'
 cask 'spotify'
 cask 'sublime-text'
 cask 'timing'
+cask 'visual-studio-code'
 cask 'veracrypt'
 cask 'ynab'
+cask 'zsa-wally'
 
 # Mac App Store
 mas 'SnippetsLab', id: 1006087419
-mas 'Notability', id: 736189492
+mas 'Notability', id: 360593530
 mas 'Xcode', id: 497799835
-mas 'PiPifier', id: 1160374471
 mas 'iA Writer', id: 775737590
 mas 'Day One', id: 1055511498
+mas 'Monodraw', id: 920404675
+
