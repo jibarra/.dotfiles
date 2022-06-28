@@ -16,6 +16,3 @@ cask 'timing'
 cask 'veracrypt'
 cask 'ynab'
 
-# Mac App Store
-mas 'Day One', id: 1055511498
-
