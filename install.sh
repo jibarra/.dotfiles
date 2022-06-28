@@ -1,5 +1,13 @@
 #! /bin/bash
 
+read -p "Is this a home installation? yes/no" installation
+
+if (( $installation == 'yes' )); then
+  echo "Starting a home installation"
+else
+  echo "Starting a non-home installation"
+fi
+
 # Ask for the administrator password upfront
 sudo -v
 
@@ -18,6 +26,10 @@ brew update
 # Install all our dependencies with bundle (See Brewfile)
 brew tap homebrew/bundle
 brew bundle --file Brewfile/Brewfile-common
+
+if (( $installation == 'yes' )); then
+  brew bundle --file Brewfile/Brewfile-home
+fi
 
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
