@@ -4,9 +4,9 @@
 [color]
 	ui = auto
 [commit]
-	template = ~/.gitmessage.txt
+	template = ~/.dotfiles/git/.gitmessage.txt
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.dotfiles/git/.gitignore_global
 [push]
         default = current
 [init]
