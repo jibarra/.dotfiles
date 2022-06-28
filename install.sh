@@ -28,6 +28,3 @@ source zsh_powerlevel9k_theme.sh
 source ssh_key_to_keychain.sh
 source link_dotfiles.sh
 
-# Set macOS preferences
-# Ran last because it restarts the shell and computer
-source osx_defaults.sh
