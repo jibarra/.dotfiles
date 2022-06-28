@@ -7,3 +7,8 @@
 	template = ~/.gitmessage.txt
 [core]
 	excludesfile = ~/.gitignore_global
+[push]
+        default = current
+[init]
+        defaultBranch = main
+
