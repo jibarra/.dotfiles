@@ -12,6 +12,8 @@ do
   fi
 done
 
+source ~/.machine_specific_zshrc
+
 # Load Oh My ZSH
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
