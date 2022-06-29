@@ -39,4 +39,5 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 source zsh_powerlevel9k_theme.sh
 source ssh_key_to_keychain.sh
 source link_dotfiles.sh
+source macos_defaults.sh
 
