@@ -11,9 +11,6 @@ brew 'mas'
 brew 'trash'
 brew 'zsh'
 
-# Development
-brew 'zsh-syntax-highlighting'
-
 # GUI applications
 cask '1password'
 cask 'alfred'
