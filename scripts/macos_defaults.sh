@@ -35,6 +35,9 @@ defaults write -g KeyRepeat -int 1
 
 # Trackpad tracking speed
 defaults write -g com.apple.mouse.scaling -float 2.0
+# Trackpad disabled with external mouse
+defaults write com.apple.AppleMultitouchTrackpad USBMouseStopsTrackpad 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad USBMouseStopsTrackpad 1
 
 # Disable auto spelling correction
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
