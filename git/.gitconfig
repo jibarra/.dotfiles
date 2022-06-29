@@ -1,14 +1,25 @@
 [user]
 	email = developer@icepicky.com
 	name = Jose Ibarra
+
 [color]
 	ui = auto
+
 [commit]
 	template = ~/.dotfiles/git/.gitmessage.txt
+
 [core]
 	excludesfile = ~/.dotfiles/git/.gitignore_global
+
 [push]
         default = current
+
 [init]
         defaultBranch = main
+
+[credential]
+	helper = osxkeychain
+
+[includeIf "gitdir:~/workspace/"]
+	path = ~/.dotfiles/git/gusto/.gitconfig
 

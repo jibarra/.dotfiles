@@ -1,0 +1,6 @@
+[user]
+	email = jose.ibarra@gusto.com
+
+[core]
+	hooksPath = /Users/jose.ibarra/.gusto/githooks
+
