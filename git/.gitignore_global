@@ -5,3 +5,6 @@
 
 # IntelliJ
 .idea/*
+
+# IntelliJ LSP
+lsp/*
