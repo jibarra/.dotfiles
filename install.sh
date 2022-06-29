@@ -36,10 +36,10 @@ chsh -s $(which zsh)
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-source create_machine_specific_zshrc.sh
-source zsh_powerlevel9k_theme.sh
-source ssh_key_to_keychain.sh
-source zsh_install_syntax_highlighting.sh
-source link_dotfiles.sh
-source macos_defaults.sh
+source scripts/create_machine_specific_zshrc.sh
+source scripts/zsh_powerlevel9k_theme.sh
+source scripts/ssh_key_to_keychain.sh
+source scripts/zsh_install_syntax_highlighting.sh
+source scripts/link_dotfiles.sh
+source scripts/macos_defaults.sh
 
