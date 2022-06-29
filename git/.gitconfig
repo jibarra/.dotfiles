@@ -20,6 +20,6 @@
 [credential]
 	helper = osxkeychain
 
-[includeIf "gitdir:~/workspace/"]
-	path = ~/.dotfiles/git/gusto/.gitconfig
+[include]
+	path = ~/.machine_specific_gitconfig
 
