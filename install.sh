@@ -2,7 +2,7 @@
 
 read -p "Is this a home installation? yes/no" installation
 
-if (( $installation == 'yes' )); then
+if [[ $installation == 'yes' ]]; then
   echo "Starting a home installation"
 else
   echo "Starting a non-home installation"
@@ -27,7 +27,7 @@ brew update
 brew tap homebrew/bundle
 brew bundle --file Brewfile/Brewfile-common
 
-if (( $installation == 'yes' )); then
+if [[ $installation == 'yes' ]]; then
   brew bundle --file Brewfile/Brewfile-home
 fi
 
