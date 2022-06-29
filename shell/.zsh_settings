@@ -5,34 +5,11 @@ DEFAULT_USER=jose
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # Highly customizable theme
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 # Simple, informative theme
 # ZSH_THEME="agnoster"
 # Default theme
 # ZSH_THEME="robbyrussell"
-
-# Powerlevel9k settings: See https://github.com/bhilburn/powerlevel9k
-# Defaults (commented for reference)
-# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
-# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir_writable dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator command_execution_time)
-
-# Settings for `command_execution_time`
-# Default 3 seconds; 0 is always
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=3
-# Digits in fractional part of time value
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=2
-
-# Settings for `time`
-POWERLEVEL9K_TIME_FORMAT='H:M:S'
-
-# Settings for VCS
-# Shortening branch names
-POWERLEVEL9K_VCS_SHORTEN_MIN_LENGTH=9
-POWERLEVEL9K_VCS_SHORTEN_MIN_LENGTH=11
-POWERLEVEL9K_VCS_SHORTEN_STRATEGY="truncate_from_right"
-POWERLEVEL9K_SHORTEN_DELIMITER=".."
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -71,3 +48,4 @@ POWERLEVEL9K_SHORTEN_DELIMITER=".."
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
+
