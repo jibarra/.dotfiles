@@ -1,18 +1,17 @@
 # Taps
-tap 'caskroom/cask'
-tap 'homebrew/bundle'
+tap "caskroom/cask"
+tap "homebrew/bundle"
 
 # Development
-brew 'hugo'
-brew 'python3'
+brew "hugo"
+brew "python3"
 
 # GUI applications
-cask 'discord'
-cask 'dropbox'
-cask 'intellij-idea'
-cask 'microsoft-office'
-cask 'slack'
-cask 'timing'
-cask 'veracrypt'
-cask 'ynab'
-
+cask "discord"
+cask "dropbox"
+cask "intellij-idea"
+cask "microsoft-office"
+cask "slack"
+cask "timing"
+cask "veracrypt"
+cask "ynab"

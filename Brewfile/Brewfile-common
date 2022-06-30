@@ -1,38 +1,37 @@
 # Taps
-tap 'homebrew/cask'
-tap 'homebrew/bundle'
+tap "homebrew/core"
+tap "homebrew/cask"
+tap "homebrew/bundle"
 
 # Command line applications
 # Core
-brew 'coreutils'
-brew 'git'
-brew 'grep'
-brew 'mas'
-brew 'trash'
-brew 'zsh'
+brew "coreutils"
+brew "git"
+brew "grep"
+brew "mas"
+brew "trash"
+brew "zsh"
 
 # GUI applications
-cask '1password'
-cask 'alfred'
-cask 'balance-lock'
-cask 'dash'
-cask 'firefox'
-cask 'flux'
-cask 'google-chrome'
-cask 'iterm2'
-cask 'karabiner-elements'
-cask 'rectangle'
-cask 'sequel-pro'
-cask 'sketch'
-cask 'spotify'
-cask 'sublime-text'
-cask 'visual-studio-code'
-cask 'zsa-wally'
+cask "1password"
+cask "alfred"
+cask "balance-lock"
+cask "dash"
+cask "firefox"
+cask "flux"
+cask "google-chrome"
+cask "iterm2"
+cask "karabiner-elements"
+cask "rectangle"
+cask "sequel-pro"
+cask "sketch"
+cask "spotify"
+cask "sublime-text"
+cask "visual-studio-code"
 
 # Mac App Store
-mas 'SnippetsLab', id: 1006087419
-mas 'Notability', id: 360593530
-mas 'Xcode', id: 497799835
-mas 'iA Writer', id: 775737590
-mas 'Monodraw', id: 920404675
-
+mas "SnippetsLab", id: 1006087419
+mas "Notability", id: 360593530
+mas "Xcode", id: 497799835
+mas "iA Writer", id: 775737590
+mas "Monodraw", id: 920404675
