@@ -38,7 +38,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 source scripts/create_machine_specific_zshrc.sh
 source scripts/create_machine_specific_gitconfig.sh
-source scripts/zsh_powerlevel9k_theme.sh
+source scripts/zsh_powerlevel10k_theme.sh
 source scripts/ssh_key_to_keychain.sh
 source scripts/zsh_install_syntax_highlighting.sh
 source scripts/link_dotfiles.sh

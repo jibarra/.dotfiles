@@ -12,6 +12,9 @@ brew "mas"
 brew "trash"
 brew "zsh"
 
+# Development
+brew "chruby"
+
 # GUI applications
 cask "1password"
 cask "alfred"

@@ -1,10 +1,9 @@
 # Taps
-tap "caskroom/cask"
+tap "homebrew/cask"
 tap "homebrew/bundle"
 
 # Development
 brew "hugo"
-brew "python3"
 
 # GUI applications
 cask "discord"
