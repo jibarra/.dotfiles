@@ -4,6 +4,8 @@
 <dict>
 	<key>AlternateMouseScroll</key>
 	<true/>
+	<key>CopySelection</key>
+	<false/>
 	<key>Default Bookmark Guid</key>
 	<string>3D004269-A96F-42C4-A2BF-AB70B8D52617</string>
 	<key>HapticFeedbackForEsc</key>
@@ -804,6 +806,8 @@
 			<string>kNextWindowPointerAction</string>
 		</dict>
 	</dict>
+	<key>ShowFullScreenTabBar</key>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>TabStyleWithAutomaticOption</key>
