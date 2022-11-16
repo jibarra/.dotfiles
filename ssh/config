@@ -1,7 +1,13 @@
 # multiple ssh keys for github account: https://gist.github.com/jexchan/2351996/
 # Add ssh keys to keychain: https://apple.stackexchange.com/questions/48502/how-can-i-permanently-add-my-ssh-private-key-to-keychain-so-it-is-automatically
 
-Host github.com
-  UseKeychain yes
-  AddKeysToAgent yes
-  IdentityFile ~/.ssh/id
+# Use MacOS keychain to manage ssh key
+# Host github.com
+#  UseKeychain yes
+#  AddKeysToAgent yes
+#  IdentityFile ~/.ssh/id
+
+# Use 1Password to manage ssh key
+Host *
+  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+

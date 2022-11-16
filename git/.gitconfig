@@ -1,12 +1,14 @@
 [user]
 	email = developer@icepicky.com
 	name = Jose Ibarra
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILHgfpdneUd0CI51zU37JmL2Wm7kMEd/q/NdIawWNRUo
 
 [color]
 	ui = auto
 
 [commit]
 	template = ~/.dotfiles/git/.gitmessage.txt
+	gpgsign = true
 
 [core]
 	excludesfile = ~/.dotfiles/git/.gitignore_global
@@ -23,4 +25,10 @@
 
 [include]
 	path = ~/.machine_specific_gitconfig
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 
