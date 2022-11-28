@@ -1,7 +1,6 @@
 [user]
 	email = developer@icepicky.com
 	name = Jose Ibarra
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILHgfpdneUd0CI51zU37JmL2Wm7kMEd/q/NdIawWNRUo
 
 [color]
 	ui = auto
