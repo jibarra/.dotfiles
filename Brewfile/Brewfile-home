@@ -8,7 +8,6 @@ brew "hugo"
 # GUI applications
 cask "discord"
 cask "dropbox"
-cask "intellij-idea"
 cask "microsoft-office"
 cask "slack"
 cask "timing"
