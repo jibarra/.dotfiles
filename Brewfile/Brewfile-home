@@ -13,3 +13,7 @@ cask "slack"
 cask "timing"
 cask "veracrypt"
 cask "ynab"
+
+# Mac App Store
+mas "Tripsy", id: 1429967544
+
