@@ -1,0 +1,3 @@
+alias gitclean='git delete-squashed-branches && rm .git/gc.log; git prune; git prune-packed; git gc --aggressive'
+alias zpclean='bundle clean --force; yarn cache clean; rm -f log/*.log'
+
