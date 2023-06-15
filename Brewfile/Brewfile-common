@@ -11,6 +11,7 @@ brew "grep"
 brew "mas"
 brew "trash"
 brew "zsh"
+brew "git-extras"
 
 # Development
 brew "chruby"
