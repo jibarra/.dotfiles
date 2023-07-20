@@ -1,11 +1,14 @@
 #! /bin/bash
 
-read -p "Is this a home installation? yes/no" installation
+read -p "What type of installation? home/work " installation
 
-if [[ $installation == 'yes' ]]; then
+if [[ $installation == 'home' ]]; then
   echo "Starting a home installation"
+elif [[ $installation == 'work' ]]; then
+  echo "Starting a work installation"
 else
-  echo "Starting a non-home installation"
+  echo "Incorrect installation type given"
+  exit 1
 fi
 
 # Ask for the administrator password upfront
@@ -27,8 +30,10 @@ brew update
 brew tap homebrew/bundle
 brew bundle --file Brewfile/Brewfile-common
 
-if [[ $installation == 'yes' ]]; then
+if [[ $installation == 'home' ]]; then
   brew bundle --file Brewfile/Brewfile-home
+elif [[ $installation == 'work' ]]; then
+  brew bundle --file Brewfile/Brewfile-work
 fi
 
 # Make ZSH the default shell environment

@@ -1,0 +1,7 @@
+# Taps
+tap "homebrew/cask"
+tap "homebrew/bundle"
+
+# GUI applications
+cask "arc"
+
