@@ -1,4 +1,5 @@
-alias gitclean='git delete-squashed-branches && rm .git/gc.log; git prune; git prune-packed; git gc'
-alias gitdeepclean='git delete-squashed-branches && rm .git/gc.log; git prune; git prune-packed; git gc --aggressive'
+alias _base_git_clean='git delete-squashed-branches && rm .git/gc.log; git prune; git remote prune origin; git prune-packed'
+alias gitclean='_base_git_clean; git gc'
+alias gitdeepclean='_base_git_clean; git gc --aggressive'
 alias zpclean='bundle clean --force; yarn cache clean; rm -f log/*.log'
 
