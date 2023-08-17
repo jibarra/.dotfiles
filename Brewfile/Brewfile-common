@@ -13,9 +13,6 @@ brew "trash"
 brew "zsh"
 brew "git-extras"
 
-# Development
-brew "chruby"
-
 # GUI applications
 cask "1password"
 cask "alfred"
