@@ -12,6 +12,8 @@ brew "mas"
 brew "trash"
 brew "zsh"
 brew "git-extras"
+brew "rbenv"
+brew "ruby-build"
 
 # GUI applications
 cask "1password"
