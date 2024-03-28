@@ -6,3 +6,10 @@ This is a collection of my dotfiles and other configurations for my PCs. While t
 
 - Nerd fonts (icons): https://www.nerdfonts.com/font-downloads
 - Font choosing flow: https://www.codingfont.com/
+
+## Things to investigate adding
+- API documentation search app (and Alfred integration). Potential options:
+ - [Dash](https://kapeli.com/dash)
+ - [DevDocs](https://devdocs.io/)
+  - [Potential integration](https://github.com/yannickglt/alfred-devdocs)
+
