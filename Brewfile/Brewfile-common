@@ -32,6 +32,7 @@ cask "sketch"
 cask "spotify"
 cask "sublime-text"
 cask "visual-studio-code"
+cask "zoom"
 
 # Mac App Store
 mas "GIPHY CAPTURE", id: 668208984
