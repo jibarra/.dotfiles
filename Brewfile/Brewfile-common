@@ -5,39 +5,39 @@ tap "homebrew/bundle"
 # Core
 brew "coreutils"
 brew "git"
+brew "git-extras"
 brew "grep"
 brew "mas"
-brew "trash"
-brew "zsh"
-brew "git-extras"
 brew "rbenv"
 brew "ruby-build"
+brew "trash"
+brew "zsh"
 
 # GUI applications
 cask "1password"
 cask "alfred"
 cask "balance-lock"
 cask "dash"
+cask "dozer"
 cask "firefox"
 cask "flux"
 cask "google-chrome"
 cask "iterm2"
 cask "karabiner-elements"
+cask "meetingbar"
+cask "obsidian"
 cask "rectangle"
 cask "sequel-pro"
 cask "sketch"
 cask "spotify"
 cask "sublime-text"
 cask "visual-studio-code"
-cask "dozer"
-cask "obsidian"
-cask "meetingbar"
 
 # Mac App Store
-mas "SnippetsLab", id: 1006087419
-mas "Notability", id: 360593530
-mas "Xcode", id: 497799835
-mas "iA Writer", id: 775737590
-mas "Monodraw", id: 920404675
 mas "GIPHY CAPTURE", id: 668208984
+mas "iA Writer", id: 775737590
+mas "Notability", id: 360593530
+mas "Monodraw", id: 920404675
+mas "SnippetsLab", id: 1006087419
+mas "Xcode", id: 497799835
 
