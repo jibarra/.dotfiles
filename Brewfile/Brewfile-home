@@ -15,4 +15,5 @@ cask "ynab"
 
 # Mac App Store
 mas "Tripsy", id: 1429967544
+mas "GameTrack", id: 1136800740
 
