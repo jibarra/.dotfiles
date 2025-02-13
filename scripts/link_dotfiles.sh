@@ -6,15 +6,15 @@ mkdir ~/.dotfiles/backups/"${now}"
 
 # Git config
 mv ~/.gitconfig ~/.dotfiles/backups/"${now}"
-ln -s ~/.dotfiles/config/git/.gitconfig ~/.gitconfig
+ln -F -s ~/.dotfiles/config/git/.gitconfig ~/.gitconfig
 
 # SSH config
 mv ~/.ssh/config ~/.dotfiles/backups/"${now}"
-ln -s ~/.dotfiles/config/ssh/config ~/.ssh/config
+ln -F -s ~/.dotfiles/config/ssh/config ~/.ssh/config
 
 # ZSH config
 mv ~/.zshrc ~/.dotfiles/backups/"${now}"
-ln -s ~/.dotfiles/shell/.zshrc ~/.zshrc
+ln -F -s ~/.dotfiles/shell/.zshrc ~/.zshrc
 
 # Alacritty config
 mv ~/.config/alacritty.toml ~/.dotfiles/backups/"${now}"
