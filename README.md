@@ -22,9 +22,11 @@ The dotfiles have been split up into folders to represent different responsibili
 - Nerd fonts (icons): https://www.nerdfonts.com/font-downloads
 - Font choosing flow: https://www.codingfont.com/
 
-## Things to investigate adding
+## TODO: Things to investigate adding
 - API documentation search app (and Alfred integration). Potential options:
  - [Dash](https://kapeli.com/dash)
  - [DevDocs](https://devdocs.io/)
   - [Potential integration](https://github.com/yannickglt/alfred-devdocs)
+- Think about moving shell/ files into config/
+- Think about moving Alfred/ files into config/
 
