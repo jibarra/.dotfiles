@@ -6,11 +6,11 @@
 	ui = auto
 
 [commit]
-	template = ~/.dotfiles/git/.gitmessage.txt
+	template = ~/.dotfiles/config/git/.gitmessage.txt
 	gpgsign = true
 
 [core]
-	excludesfile = ~/.dotfiles/git/.gitignore_global
+	excludesfile = ~/.dotfiles/config/git/.gitignore_global
 
 [push]
         default = current
