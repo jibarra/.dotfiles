@@ -8,16 +8,18 @@
 [commit]
 	template = ~/.dotfiles/config/git/.gitmessage.txt
 	gpgsign = true
+	verbose = true
 
 [core]
 	excludesfile = ~/.dotfiles/config/git/.gitignore_global
 
 [push]
-        default = current
+	default = current
 	autoSetupRemote = true
+	followTags = true
 
 [init]
-        defaultBranch = main
+	defaultBranch = main
 
 [credential]
 	helper = osxkeychain
@@ -34,3 +36,25 @@
 [alias]
 	pushfwl = push --force-with-lease
 	pushfl = push --force-with-lease
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	renames = true
+	mnemonicPrefix = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[help]
+	autocorrect = prompt
+[rerere]
+	enabled = true
+	autoupdate = true
+[rebase]
+	autoSquash = true
+[pull]
+	rebase = true
