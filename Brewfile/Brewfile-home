@@ -3,7 +3,6 @@ brew "hugo"
 
 # GUI applications
 cask "dropbox"
-cask "microsoft-office"
 
 # Mac App Store
 mas "Tripsy", id: 1429967544
