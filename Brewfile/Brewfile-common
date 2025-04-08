@@ -1,6 +1,3 @@
-# Taps
-tap "homebrew/bundle"
-
 # Command line applications
 # Core
 brew "coreutils"
@@ -19,12 +16,10 @@ cask "alacritty"
 cask "alfred"
 cask "balance-lock"
 cask "dash"
-cask "dozer"
 cask "firefox"
 cask "flux"
 cask "google-chrome"
 cask "karabiner-elements"
-cask "meetingbar"
 cask "obsidian"
 cask "rectangle"
 cask "sequel-pro"
@@ -35,9 +30,6 @@ cask "visual-studio-code"
 cask "zoom"
 
 # Mac App Store
-mas "GIPHY CAPTURE", id: 668208984
-mas "iA Writer", id: 775737590
-mas "Notability", id: 360593530
 mas "Monodraw", id: 920404675
 mas "SnippetsLab", id: 1006087419
 mas "Xcode", id: 497799835

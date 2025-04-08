@@ -1,17 +1,9 @@
-# Taps
-tap "homebrew/bundle"
-
 # Development
 brew "hugo"
 
 # GUI applications
-cask "discord"
 cask "dropbox"
 cask "microsoft-office"
-cask "slack"
-cask "timing"
-cask "veracrypt"
-cask "ynab"
 
 # Mac App Store
 mas "Tripsy", id: 1429967544

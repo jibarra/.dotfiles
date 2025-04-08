@@ -1,6 +1,7 @@
-# Taps
-tap "homebrew/bundle"
-
 # GUI applications
 cask "arc"
+cask "meetingbar"
+
+# Mac App Store
+mas "GIPHY CAPTURE", id: 668208984
 
