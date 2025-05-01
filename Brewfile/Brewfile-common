@@ -6,7 +6,6 @@ brew "git-extras"
 brew "grep"
 brew "mas"
 brew "rbenv"
-brew "ruby-build"
 brew "trash"
 brew "zsh"
 
