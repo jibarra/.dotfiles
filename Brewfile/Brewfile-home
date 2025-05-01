@@ -3,6 +3,8 @@ brew "hugo"
 
 # GUI applications
 cask "dropbox"
+cask "godot"
+cask "godot-mono"
 
 # Mac App Store
 mas "Tripsy", id: 1429967544
