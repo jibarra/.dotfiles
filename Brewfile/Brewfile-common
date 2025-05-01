@@ -23,6 +23,7 @@ cask "rectangle"
 cask "spotify"
 cask "sublime-text"
 cask "visual-studio-code"
+cask "zed"
 cask "zoom"
 
 # Mac App Store
