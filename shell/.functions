@@ -4,3 +4,13 @@ function gitcheckoutuntracked() {
 	git push -u
 }
 
+function git () {
+	if [ "$1" = "checkout" ]
+	then
+		echo -e "\e[1;31m Don't use checkout; use switch to change branches or restore to clear changes instead. \e[0m" >&2
+		return 1
+	else
+		command git "$@"
+	fi
+}
+
