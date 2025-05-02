@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-for DOTFILE in `find ~/.dotfiles/shell`
+for DOTFILE in `find ~/.dotfiles/config/shell`
 do
   if [[ "$DOTFILE" != *".zshrc"* ]]; then
     [ -f "$DOTFILE" ] && source "$DOTFILE"

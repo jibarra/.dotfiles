@@ -14,7 +14,7 @@ ln -F -s ~/.dotfiles/config/ssh/config ~/.ssh/config
 
 # ZSH config
 mv ~/.zshrc ~/.dotfiles/backups/"${now}"
-ln -F -s ~/.dotfiles/shell/.zshrc ~/.zshrc
+ln -F -s ~/.dotfiles/config/shell/.zshrc ~/.zshrc
 
 # Alacritty config
 mv ~/.config/alacritty.toml ~/.dotfiles/backups/"${now}"
