@@ -1,8 +1,0 @@
-When I updated to the 64-bit MacOS version, I needed to find some way to use YNAB on the new system because it is 32-bit.
-
-I remember finding some git repository that had a command to run to convert it to 64 bit. The conversion described was rewrapping the app in a 64 bit Adobe runtime instead of a 32 bit one.
-
-- https://github.com/banesto/YNAB4-64bit
-- https://gitlab.com/bradleymiller/Y64
-
-When using a new Mac, ensure that the script(s) above look okay before running and integrating into the install process.
