@@ -21,3 +21,10 @@ mv ~/.config/alacritty.toml ~/.dotfiles/backups/"${now}"
 mkdir ~/.config
 ln -F -s ~/.dotfiles/config/alacritty/alacritty.toml ~/.config/alacritty.toml
 
+# Zed config
+mv ~/.config/zed/settings.json ~/.dotfiles/backups/zed/"${now}"
+mv ~/.config/zed/keymap.json ~/.dotfiles/backups/zed/"${now}"
+mkdir ~/.config/zed
+ln -F -s ~/.dotfiles/config/zed/settings.json ~/.config/zed/settings.json
+ln -F -s ~/.dotfiles/config/zed/keymap.json ~/.config/zed/keymap.json
+
