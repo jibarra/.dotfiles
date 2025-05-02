@@ -7,11 +7,12 @@ To setup a new computer (or update an existing one), run `./install.sh`.
 # Structure
 
 The dotfiles have been split up into folders to represent different responsibilities:
-- `Brewfile` contains the brewfiles for installing homebrew applications.
-- `Fonts` contains fonts that I prefer to use. Currently these must be installed manually.
-- `backups` contains backups for previous dot files.
-- `config` contains configurations for different applications (e.g. git, shell, Alfred, Alacritty, etc.)
-- `scripts` contains the scripts that are run via `./install.sh`.
+
+- `config/` contains configurations for different applications (e.g. git, shell, Alfred, Alacritty, etc.)
+- `scripts/` contains the scripts that are run via `./install.sh`.
+- `Brewfile/` contains the brewfiles for installing homebrew applications.
+- `Fonts/` contains fonts that I prefer to use. Currently these must be installed manually.
+- `backups/` contains backups for previous dot files and configurations.
 
 ## References & sources
 
