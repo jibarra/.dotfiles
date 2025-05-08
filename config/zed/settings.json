@@ -7,6 +7,19 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "edit_predictions": {
+    "mode": "subtle",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null
+    },
+    "enabled_in_text_threads": false
+  },
+  "agent": {
+    "model_parameters": [],
+    "always_allow_tool_actions": false,
+    "version": "2"
+  },
   "features": {
     "edit_prediction_provider": "zed"
   },
