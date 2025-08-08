@@ -16,9 +16,12 @@
     "enabled_in_text_threads": false
   },
   "agent": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
+    },
     "model_parameters": [],
     "always_allow_tool_actions": false,
-    "version": "2"
   },
   "features": {
     "edit_prediction_provider": "zed"
