@@ -34,8 +34,10 @@ mkdir ~/.dotfiles/backups/"${now}"/claude
 mv ~/.claude/CLAUDE.md ~/.dotfiles/backups/"${now}"/claude
 mv ~/.claude/settings.json ~/.dotfiles/backups/"${now}"/claude
 mv ~/.claude/commands ~/.dotfiles/backups/"${now}"/claude
+mv ~/.claude/hooks ~/.dotfiles/backups/"${now}"/claude
 mkdir ~/.claude
 ln -F -s ~/.dotfiles/config/claude/CLAUDE.md ~/.claude/CLAUDE.md 
 ln -F -s ~/.dotfiles/config/claude/settings.json ~/.claude/settings.json
 ln -F -s ~/.dotfiles/config/claude/commands ~/.claude/commands
+ln -F -s ~/.dotfiles/config/claude/hooks ~/.claude/hooks
 

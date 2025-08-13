@@ -7,4 +7,3 @@
 
 - When writing tests, don't use mocks unless we're accessing an external service.
 - When testing, avoid mocking unless we need to make a call to an external service.
-- When we update code, we should run linters to ensure that the code matches our rules. For ruby, we use rubocop and can use bin/rubocop for to run it.

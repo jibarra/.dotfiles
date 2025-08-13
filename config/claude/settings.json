@@ -1,5 +1,5 @@
 {
   "hooks": {
-    "post_tool_use": "if [[ \"$CLAUDE_TOOL_NAME\" =~ ^(Edit|MultiEdit|Write)$ ]]; then git diff --name-only --diff-filter=AM | grep '\\.rb$' | xargs -r bundle exec rubocop --autocorrect; fi"
+    "post_tool_use": "~/.claude/hooks/lint-ruby-files.sh"
   }
 }
