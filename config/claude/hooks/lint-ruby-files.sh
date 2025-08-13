@@ -3,11 +3,6 @@
 # Script to lint modified Ruby files with RuboCop
 # Called by Claude Code post_tool_use hook
 
-# Only run for file modification tools
-if [[ ! "$CLAUDE_TOOL_NAME" =~ ^(Edit|MultiEdit|Write)$ ]]; then
-    exit 0
-fi
-
 # Check if we're in a git repository
 if ! git rev-parse --git-dir >/dev/null 2>&1; then
     echo "Not in a git repository, skipping Ruby linting" >&2
