@@ -1,5 +1,15 @@
 {
   "hooks": {
-    "post_tool_use": "~/.claude/hooks/lint-ruby-files.sh"
+    "PostToolUse": [
+      {
+        "matcher": "(Edit|MultiEdit|Write)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/joseibarra/.claude/hooks/lint-ruby-files.sh"
+          }
+        ]
+      }
+    ]
   }
 }
