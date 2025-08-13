@@ -1,4 +1,5 @@
-We're tasked with analyzing the Ruby gem upgrades that have occurred on the current branch.
+We're tasked with analyzing the Ruby gem upgrades that have occurred on the current branch
+when compared to main.
 
 We want to determine if the upgrades are compatible with the existing codebase
 and if they introduce any breaking changes.
