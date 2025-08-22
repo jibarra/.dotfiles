@@ -22,7 +22,7 @@ mkdir ~/.config
 ln -F -s ~/.dotfiles/config/alacritty/alacritty.toml ~/.config/alacritty.toml
 
 # Zed config
-mkdir ~/.dotfiles/backups/"${now}/zed"
+mkdir ~/.dotfiles/backups/"${now}"/zed
 mv ~/.config/zed/settings.json ~/.dotfiles/backups/"${now}"/zed
 mv ~/.config/zed/keymap.json ~/.dotfiles/backups/"${now}"/zed
 mkdir ~/.config/zed
