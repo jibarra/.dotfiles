@@ -3,7 +3,6 @@
 # Display all files in Finder
 defaults write com.apple.Finder AppleShowAllFiles TRUE
 # Show all file extensions in Finder
-
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 # Finder: show status bar
 defaults write com.apple.finder ShowStatusBar -bool true
@@ -11,6 +10,8 @@ defaults write com.apple.finder ShowStatusBar -bool true
 defaults write com.apple.finder ShowPathbar -bool true
 # Display full POSIX path as Finder window title
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+# Disable writing .DS_Store to network stores
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
 
 # Enable snap-to-grid for icons on the desktop and in other icon views
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
