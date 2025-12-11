@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "colorize_brackets": true,
   "edit_predictions": {
     "mode": "eager",
     "copilot": {
@@ -21,7 +22,7 @@
       "model": "claude-sonnet-4"
     },
     "model_parameters": [],
-    "always_allow_tool_actions": false,
+    "always_allow_tool_actions": false
   },
   "features": {
     "edit_prediction_provider": "zed"
