@@ -7,7 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "colorize_brackets": true,
+  "colorize_brackets": false,
   "edit_predictions": {
     "mode": "eager",
     "copilot": {
