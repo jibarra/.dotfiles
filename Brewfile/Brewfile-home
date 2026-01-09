@@ -2,6 +2,8 @@
 brew "hugo"
 
 # GUI applications
+cask "adobe-digital-editions"
+cask "calibre"
 cask "dropbox"
 cask "godot"
 cask "godot-mono"
