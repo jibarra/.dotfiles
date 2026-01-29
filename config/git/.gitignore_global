@@ -8,3 +8,8 @@
 
 # IntelliJ LSP
 lsp/*
+
+# Claude worktrees
+# This isn't standardized yet but how I split off Claude worktrees
+./claude/worktrees/*
+
