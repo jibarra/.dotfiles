@@ -2,4 +2,5 @@ alias _base_git_clean='git delete-squashed-branches && rm .git/gc.log; git prune
 alias gitclean='_base_git_clean; git gc'
 alias gitdeepclean='_base_git_clean; git gc --aggressive'
 alias zpclean='bundle clean --force; yarn cache clean; rm -f log/*.log'
+alias gitworktreereset='git reset --hard main'
 
