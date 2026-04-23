@@ -11,6 +11,16 @@
           }
         ]
       }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/joseibarra/.claude/hooks/improve_nudge.sh"
+          }
+        ]
+      }
     ]
   },
   "enabledPlugins": {
