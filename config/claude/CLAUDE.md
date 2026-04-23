@@ -1,9 +1,11 @@
-- Use comments sparingly. Only explain what code is doing when the code is very complex.
+- Use comments sparingly. Explaining why something was done in comments is more useful than what is done. Only explain what code is doing when the code is very complex.
 - Keep code changes small and focused - aim for atomic commits that address one specific issue or feature at a time. Break larger tasks into smaller, separable tasks that can be reviewed, tested, and committed independently. Each change should be self-contained and have a clear purpose.
+- Default to YAGNI (You Aren't Gonna Need It). Don't introduce abstractions, configuration options, feature flags, or defensive code for conditions that don't currently exist. The wrong abstraction is worse than no abstraction — if you don't yet know the right shape, duplicate the code. Three concrete side-by-side implementations will teach you the correct abstraction more reliably than a premature one everyone has to bend around.
+- Minimize call-stack depth. If understanding a piece of code requires chasing through many methods — and especially many files — that's a problem. Prefer flat, explicit code over multi-layer dispatch.
+- Prefer boring and explicit over clever and magical. Small surfaces beat big ones (a method that does one thing beats a method with seven optional parameters). If a solution feels clever, ask whether a boring version would work — boring wins.
+- For non-trivial design decisions, discuss the approach before implementing. Lay out the tradeoffs, propose a recommendation, and wait for a green light. Terse command-style "just build it" is fine for small changes; anything with architectural implications deserves a short design conversation first.
 - When removing code (methods, classes, constants, etc.), always identify and handle all references to that code. This includes: updating imports, removing method calls, updating tests, cleaning up configuration files, and addressing any dependencies. Don't leave dangling references that would cause compilation errors or runtime issues.
 - When we update code, we should run tests for that file (if they exist) to ensure we didn't break anything
 - When we run tests for ruby files, we should use bin/rspec instead of just rspec.
-
-
-- When writing tests, don't use mocks unless we're accessing an external service.
 - When testing, avoid mocking unless we need to make a call to an external service.
+
