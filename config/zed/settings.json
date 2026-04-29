@@ -7,6 +7,23 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    }
+  },
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
   "colorize_brackets": false,
   "edit_predictions": {
     "mode": "eager",
@@ -17,6 +34,7 @@
     "enabled_in_text_threads": false
   },
   "agent": {
+    "dock": "right",
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-sonnet-4"
@@ -27,7 +45,11 @@
   "features": {
     "edit_prediction_provider": "zed"
   },
-  "icon_theme": "Catppuccin Mocha",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Catppuccin Mocha",
+    "dark": "Catppuccin Mocha"
+  },
   "ui_font_size": 16,
   "buffer_font_size": 16,
   "buffer_font_family": "Source Code Pro",
@@ -38,9 +60,9 @@
   "remove_trailing_whitespace_on_save": true,
 
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "One Light",
-    "dark": "Dracula"
+    "dark": "Dracula Solid"
   },
   "languages": {
     "Ruby": {
