@@ -8,6 +8,10 @@
   "permission": {
     "edit": "allow",
     "webfetch": "allow",
-    "bash": "ask"
+    "bash": {
+      "*": "ask",
+      "grep *": "allow",
+      "rg *": "allow"
+    }
   }
 }
