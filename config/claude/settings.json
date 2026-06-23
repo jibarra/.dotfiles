@@ -26,5 +26,6 @@
   "enabledPlugins": {
     "ruby-lsp@claude-plugins-official": true
   },
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "xhigh"
 }
