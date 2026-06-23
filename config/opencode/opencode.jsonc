@@ -4,6 +4,7 @@
   "small_model": "anthropic/claude-sonnet-4-5",
   "autoupdate": "notify",
   "share": "disabled",
+  "instructions": ["~/.dotfiles/config/ai_coding_harness/AGENTS.md"],
   "permission": {
     "edit": "allow",
     "webfetch": "allow",

@@ -38,7 +38,7 @@ mv ~/.claude/hooks ~/.dotfiles/backups/"${now}"/claude
 mv ~/.claude/skills ~/.dotfiles/backups/"${now}"/claude
 mv ~/.claude/agents ~/.dotfiles/backups/"${now}"/claude
 mkdir ~/.claude
-ln -F -s ~/.dotfiles/config/claude/CLAUDE.md ~/.claude/CLAUDE.md
+ln -F -s ~/.dotfiles/config/ai_coding_harness/AGENTS.md ~/.claude/CLAUDE.md
 ln -F -s ~/.dotfiles/config/claude/settings.json ~/.claude/settings.json
 ln -F -s ~/.dotfiles/config/claude/commands ~/.claude/commands
 ln -F -s ~/.dotfiles/config/claude/hooks ~/.claude/hooks
