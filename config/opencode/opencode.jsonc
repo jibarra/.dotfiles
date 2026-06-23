@@ -6,12 +6,13 @@
   "share": "disabled",
   "instructions": ["~/.dotfiles/config/ai_coding_harness/AGENTS.md"],
   "permission": {
+    "read": "allow",
     "edit": "allow",
     "webfetch": "allow",
+    "grep *": "allow",
+    "rg *": "allow",
     "bash": {
       "*": "ask",
-      "grep *": "allow",
-      "rg *": "allow"
     }
   }
 }
