@@ -45,3 +45,9 @@ ln -F -s ~/.dotfiles/config/claude/hooks ~/.claude/hooks
 ln -F -s ~/.dotfiles/config/claude/skills ~/.claude/skills
 ln -F -s ~/.dotfiles/config/claude/agents ~/.claude/agents
 
+# opencode config
+mkdir ~/.dotfiles/backups/"${now}"/opencode
+mv ~/.config/opencode/opencode.jsonc ~/.dotfiles/backups/"${now}"/opencode
+mkdir ~/.config/opencode
+ln -F -s ~/.dotfiles/config/opencode/opencode.jsonc ~/.config/opencode/opencode.jsonc
+
