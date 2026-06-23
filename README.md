@@ -23,10 +23,3 @@ Note that I have separate configs for AI coding agents (e.g. Claude and opencode
 - Nerd fonts (icons): https://www.nerdfonts.com/font-downloads
 - Font choosing flow: https://www.codingfont.com/
 
-# TODO: Things to investigate adding
-
-- API documentation search app (and Alfred integration). Potential options:
-  - [Dash](https://kapeli.com/dash)
-  - [DevDocs](https://devdocs.io/)
-  - [Potential integration](https://github.com/yannickglt/alfred-devdocs)
-
