@@ -14,12 +14,16 @@ The dotfiles have been split up into folders to represent different responsibili
 - `Fonts/` contains fonts that I prefer to use. Currently these must be installed manually.
 - `backups/` contains backups for previous dot files and configurations.
 
-## References & sources
+# AI coding agents
+
+Note that I have separate configs for AI coding agents (e.g. Claude and opencode). Since harness instructions aren't standardized, I've chosen to keep that stored separately as well. For example, Claude has its own setup for agents, skills, etc. For now, I'm dependent on other coding agents reading this but if they become more standardized, it can be generalized into a single source directory.
+
+# References & sources
 
 - Nerd fonts (icons): https://www.nerdfonts.com/font-downloads
 - Font choosing flow: https://www.codingfont.com/
 
-## TODO: Things to investigate adding
+# TODO: Things to investigate adding
 
 - API documentation search app (and Alfred integration). Potential options:
   - [Dash](https://kapeli.com/dash)
