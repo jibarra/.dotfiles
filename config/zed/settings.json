@@ -82,4 +82,5 @@
       },
     },
   },
+  "file_scan_exclusions": [".claude/worktrees"],
 }
