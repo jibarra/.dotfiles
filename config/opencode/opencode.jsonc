@@ -5,6 +5,7 @@
   "autoupdate": "notify",
   "share": "disabled",
   "instructions": ["~/.dotfiles/config/ai_coding_harness/AGENTS.md"],
+  "plugin": ["@pantheon-ai/opencode-warcraft-notifications"],
   "permission": {
     "read": "allow",
     "edit": "allow",
