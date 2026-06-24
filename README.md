@@ -18,6 +18,16 @@ The dotfiles have been split up into folders to represent different responsibili
 
 Note that I have separate configs for AI coding agents (e.g. Claude and opencode). Since harness instructions aren't standardized, I've chosen to keep that stored separately as well. For example, Claude has its own setup for agents, skills, etc. For now, I'm dependent on other coding agents reading this but if they become more standardized, it can be generalized into a single source directory.
 
+## opencode plugins to investigate
+
+Plugins to investigate and consider adding:
+
+- [opencode-plugin-simple-memory](https://github.com/ApplauseLab/opencode-plugin-simple-memory)
+- [plannotator](https://github.com/backnotprop/plannotator)
+- [openskills](https://github.com/numman-ali/openskills)
+- [opencode-notify](https://github.com/kdcokenny/opencode-notify)
+- [opencode-handoff](https://github.com/joshuadavidthomas/opencode-handoff)
+
 # References & sources
 
 - Nerd fonts (icons): https://www.nerdfonts.com/font-downloads
