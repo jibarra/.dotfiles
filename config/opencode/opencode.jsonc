@@ -9,9 +9,19 @@
     "read": "allow",
     "edit": "allow",
     "webfetch": "allow",
+
+    "cat *": "allow",
+    "echo *": "allow",
+    "find *": "allow",
     "grep *": "allow",
+    "head *": "allow",
+    "ls *": "allow",
     "rg *": "allow",
-    "bash": {
+    "tail *": "allow",
+
+    "git diff *": "allow",
+
+     "bash": {
       "*": "ask",
     }
   }
