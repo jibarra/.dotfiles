@@ -9,3 +9,7 @@
 # IntelliJ LSP
 lsp/*
 
+# AI coding agent worktrees
+# This isn't standardized yet but how I split off worktrees for AI coding agents
+.ai_coding_agent/worktrees/*
+
