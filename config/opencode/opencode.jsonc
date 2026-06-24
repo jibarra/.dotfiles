@@ -8,13 +8,12 @@
   "permission": {
     "read": "allow",
     "edit": "allow",
-    "webfetch": "allow",
+    "webfetch": "ask",
     "bash": {
       "*": "ask",
 
       "cat *": "allow",
       "echo *": "allow",
-      "find *": "allow",
       "grep *": "allow",
       "head *": "allow",
       "ls *": "allow",
@@ -22,9 +21,16 @@
       "tail *": "allow",
 
       "git diff *": "allow",
+      "git log *": "allow",
+      "git status *": "allow",
 
       "gh pr view *": "allow",
       "gh pr diff *": "allow",
+
+      // Potentially destructive and non-reversible
+      // find can -delete/-exec; rm is irreversible.
+      "find *": "ask",
+      "rm *": "ask",
     },
     "external_directory": {
       "~/.dotfiles/config/claude/**": "allow",
