@@ -9,20 +9,28 @@
     "read": "allow",
     "edit": "allow",
     "webfetch": "allow",
-
-    "cat *": "allow",
-    "echo *": "allow",
-    "find *": "allow",
-    "grep *": "allow",
-    "head *": "allow",
-    "ls *": "allow",
-    "rg *": "allow",
-    "tail *": "allow",
-
-    "git diff *": "allow",
-
-     "bash": {
+    "bash": {
       "*": "ask",
+
+      "cat *": "allow",
+      "echo *": "allow",
+      "find *": "allow",
+      "grep *": "allow",
+      "head *": "allow",
+      "ls *": "allow",
+      "rg *": "allow",
+      "tail *": "allow",
+
+      "git diff *": "allow",
+
+      "gh pr view *": "allow",
+      "gh pr diff *": "allow",
+    },
+    "external_directory": {
+      "~/.dotfiles/config/claude/**": "allow",
+      "~/.dotfiles/config/opencode/**": "allow",
+      "~/.claude/**": "allow",
+      "~/.config/opencode/**": "allow",
     }
   },
   "agent": {
