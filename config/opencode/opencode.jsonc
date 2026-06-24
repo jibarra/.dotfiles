@@ -24,5 +24,67 @@
      "bash": {
       "*": "ask",
     }
+  },
+  "agent": {
+    "generic_coding_changes_planner": {
+      "description": "Generic planner for coding changes. Gathers context across Linear, GitHub, and the codebase, then produces an implementation plan covering architecture decisions, file changes, test strategy, risks, and tradeoffs. Use when the user asks to plan a code change before implementing, or when invoked as the parallel planner from the `plan_coding_changes` skill.",
+      "mode": "subagent",
+      "model": "anthropic/claude-opus-4-8",
+      "prompt": "{file:~/.dotfiles/config/claude/agents/planners/generic_coding_changes_planner.md}"
+    },
+    "architecture_reviewer": {
+      "description": "Reviews code changes for architectural soundness. Focuses on layering, module boundaries, coupling, abstraction choices, and adherence to the codebase's architectural patterns (MVCQ, command/query split). Use as one reviewer in a multi-reviewer panel.",
+      "mode": "subagent",
+      "model": "anthropic/claude-opus-4-8",
+      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/architecture_reviewer.md}"
+    },
+    "edge_case_reviewer": {
+      "description": "Adversarial QA reviewer. Finds inputs, states, and scenarios that will break the changed code — nulls, empties, boundaries, races, failures, and surprising data shapes. Use as one reviewer in a multi-reviewer panel.",
+      "mode": "subagent",
+      "model": "anthropic/claude-opus-4-8",
+      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/edge_case_reviewer.md}"
+    },
+    "jose_reviewer": {
+      "description": "Reviews code changes as Jose. Represents a specific reviewer with strong opinions — YAGNI, atomic changes, reference hygiene, and other personal preferences. Findings from this reviewer are weighted the highest in the panel and take precedence in the final verdict. Use as one reviewer in a multi-reviewer panel.",
+      "mode": "subagent",
+      "model": "anthropic/claude-opus-4-8",
+      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/jose_reviewer.md}"
+    },
+    "maintainability_reviewer": {
+      "description": "Reviews code changes for long-term maintainability. Focuses on naming, duplication, clarity, structure, function length, and whether future readers will understand the code without archaeology. Use as one reviewer in a multi-reviewer panel.",
+      "mode": "subagent",
+      "model": "anthropic/claude-opus-4-8",
+      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/maintainability_reviewer.md}"
+    },
+    "performance_reviewer": {
+      "description": "Reviews code changes for performance and scalability concerns. Focuses on N+1 queries, missing indexes, inefficient loops, caching opportunities, and work that will degrade as data grows. Use as one reviewer in a multi-reviewer panel.",
+      "mode": "subagent",
+      "model": "anthropic/claude-opus-4-8",
+      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/performance_reviewer.md}"
+    },
+    "product_manager_reviewer": {
+      "description": "Reviews code changes from a product manager's perspective. Pulls the linked Linear issue(s) and checks whether the change delivers on the stated outcome, covers user-facing cases, and gets copy/voice right. Use as one reviewer in a multi-reviewer panel.",
+      "mode": "subagent",
+      "model": "anthropic/claude-opus-4-8",
+      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/product_manager_reviewer.md}"
+    },
+    "reviewer_orchestrator": {
+      "description": "Runs a panel of eight specialized reviewers in parallel (architecture, maintainability, edge case, performance, security, senior engineer, product manager, and Jose) and consolidates their findings into a single prioritized report. Jose's findings are weighted highest. Use when you want a thorough multi-perspective review of a set of code changes.",
+      "mode": "subagent",
+      "model": "anthropic/claude-opus-4-8",
+      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/reviewer_orchestrator.md}"
+    },
+    "security_reviewer": {
+      "description": "Reviews code changes for security vulnerabilities — injection, authentication, authorization, tenant isolation, data exposure, unsafe deserialization, secrets handling, CSRF/SSRF, and unsafe dependencies. Use as one reviewer in a multi-reviewer panel.",
+      "mode": "subagent",
+      "model": "anthropic/claude-opus-4-8",
+      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/security_reviewer.md}"
+    },
+    "senior_engineer_reviewer": {
+      "description": "Holistic \"would I merge this?\" reviewer. Judges scope, restraint, whether the change actually solves the stated problem, and whether the tests meaningfully verify the behavior. Use as one reviewer in a multi-reviewer panel.",
+      "mode": "subagent",
+      "model": "anthropic/claude-opus-4-8",
+      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/senior_engineer_reviewer.md}"
+    }
   }
 }
