@@ -24,6 +24,11 @@
       "rg *": "allow",
       "tail *": "allow",
 
+      // Accepted tradeoff: on GNU sed (Linux) the `e` command/`s///e` flag can
+      // run arbitrary shell, which this allow does not (and cannot, via glob)
+      // block. Allowed anyway for convenience; writes are reversible under git.
+      "sed *": "allow",
+
       // No trailing space so bare `git diff`/`git status` match too.
       "git diff*": "allow",
       "git log*": "allow",
