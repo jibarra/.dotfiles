@@ -56,4 +56,6 @@ ln -F -s ~/.dotfiles/config/opencode/opencode.jsonc ~/.config/opencode/opencode.
 ln -F -s ~/.dotfiles/config/opencode/tui.json ~/.config/opencode/tui.json
 ln -F -s ~/.dotfiles/config/opencode/plugin.json ~/.config/opencode/plugin.json
 ln -F -s ~/.dotfiles/config/opencode/opencode-notifier.json ~/.config/opencode/opencode-notifier.json
+mkdir ~/.config/opencode/plugins
+ln -F -s ~/.dotfiles/config/opencode/plugins/notifier-path-resolver.js ~/.config/opencode/plugins/notifier-path-resolver.js
 

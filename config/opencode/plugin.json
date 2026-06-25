@@ -1,6 +1,1 @@
-{
-  "@pantheon-ai/opencode-warcraft-notifications": {
-    "faction": "both",
-    "showDescriptionInToast": true
-  }
-}
+{}
