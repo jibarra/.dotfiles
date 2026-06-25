@@ -24,12 +24,21 @@
       "rg *": "allow",
       "tail *": "allow",
 
-      "git diff *": "allow",
-      "git log *": "allow",
-      "git status *": "allow",
+      // No trailing space so bare `git diff`/`git status` match too.
+      "git diff*": "allow",
+      "git log*": "allow",
+      "git status*": "allow",
+      "git show*": "allow",
+      "git blame*": "allow",
+      "git branch*": "allow",
+      "git merge-base*": "allow",
+      "git rev-parse*": "allow",
 
-      "gh pr view *": "allow",
-      "gh pr diff *": "allow",
+      "gh pr view*": "allow",
+      "gh pr diff*": "allow",
+      "gh pr list*": "allow",
+      "gh issue view*": "allow",
+      "gh search*": "allow",
 
       // Potentially destructive and non-reversible
       // find can -delete/-exec; rm is irreversible.
@@ -41,6 +50,12 @@
       "~/.dotfiles/config/opencode/**": "allow",
       "~/.claude/**": "allow",
       "~/.config/opencode/**": "allow",
+    }
+  },
+  "mcp": {
+    "linear-server": {
+      "type": "remote",
+      "url": "https://mcp.linear.app/mcp"
     }
   },
   "agent": {
