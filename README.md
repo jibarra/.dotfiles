@@ -26,7 +26,6 @@ Note that I have separate configs for AI coding agents (e.g. Claude and opencode
   - [opencode-plugin-simple-memory](https://github.com/ApplauseLab/opencode-plugin-simple-memory)
   - [plannotator](https://github.com/backnotprop/plannotator)
   - [openskills](https://github.com/numman-ali/openskills)
-  - [opencode-notify](https://github.com/kdcokenny/opencode-notify)
   - [opencode-handoff](https://github.com/joshuadavidthomas/opencode-handoff)
 
 # References & sources
