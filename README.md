@@ -14,6 +14,15 @@ The dotfiles have been split up into folders to represent different responsibili
 - `Fonts/` contains fonts that I prefer to use. Currently these must be installed manually.
 - `backups/` contains backups for previous dot files and configurations.
 
+# Linux
+
+This setup is currently geared toward macOS and has not been tested on Linux. Known limitations to reevaluate before using these dotfiles in a Linux environment:
+
+- The overall structure and `./install.sh` setup flow assume macOS conventions and would need to be reevaluated.
+- macOS-specific options (e.g. `defaults` settings) do not apply on Linux.
+- `Brewfile/` assumes Homebrew; package installation would need a Linux equivalent.
+- Allowed commands for AI agents should be reevaluated for safety, since some behave differently across platforms (e.g. `sed` differs between BSD/macOS and GNU/Linux).
+
 # AI coding agents
 
 Note that I have separate configs for AI coding agents (e.g. Claude and opencode). Since harness instructions aren't standardized, I've chosen to keep that stored separately as well. For example, Claude has its own setup for agents, skills, etc. For now, I'm dependent on other coding agents reading this but if they become more standardized, it can be generalized into a single source directory.
