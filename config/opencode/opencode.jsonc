@@ -66,6 +66,10 @@
     "linear-server": {
       "type": "remote",
       "url": "https://mcp.linear.app/mcp"
+    },
+    "rwx": {
+      "type": "local",
+      "command": ["rwx", "mcp", "serve"]
     }
   },
   "agent": {
