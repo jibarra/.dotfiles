@@ -27,7 +27,7 @@ Once scope is clear, pull everything that's already knowable before bothering th
 - **Branch name** — `git branch --show-current`.
 - **Commit messages** — `git log main..HEAD --oneline` (often the clearest statement of intent).
 - **Existing PR metadata** — if a PR exists, `gh pr view <number>` for title, current body, and linked issues. If the user is *updating* a description, start from what's there.
-- **Linked issue** — scan the branch name, commits, and PR body for identifiers (e.g. `INS-123`, `PROJ-456`). If found, pull it from Linear (`mcp__linear-server__get_issue`) to source the *why*.
+- **Linked issue** — scan the branch name, commits, and PR body for identifiers (e.g. `INS-123`, `PROJ-456`). If found, pull it from Linear (the `get_issue` MCP tool — `mcp__linear-server__get_issue` in Claude Code, `linear-server_get_issue` in opencode) to source the *why*.
 
 ## Step 3: Identify gaps and ask the user
 

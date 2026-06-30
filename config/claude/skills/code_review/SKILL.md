@@ -35,21 +35,19 @@ For large diffs, don't paste the whole thing into the orchestrator prompt — le
 
 ## Step 3: Launch the orchestrator
 
-Use the Agent tool with `subagent_type: reviewer_orchestrator`. In the prompt, include:
+Launch the `reviewer_orchestrator` agent as a subagent (the `Task` tool in opencode, the `Agent` tool in Claude Code). In the prompt, include:
 
 - The resolved scope (e.g., "Review the diff from `git diff main...HEAD` on branch `jibarra/foo`")
 - The context package from Step 2
 - The linked issue identifier (if found)
 - Any specific things the user asked the panel to focus on
 
-Example invocation:
+Example invocation (subagent call):
 
 ```
-Agent({
-  subagent_type: "reviewer_orchestrator",
-  description: "Multi-reviewer panel on <branch>",
-  prompt: "Review the changes on branch `<branch>` vs main. <N> files changed: <summary or list>. Linked issue: <ID or 'none found'>. Recent commits: <list>. Fan out to the eight reviewer agents in parallel and return a consolidated report."
-})
+subagent_type: "reviewer_orchestrator"
+description: "Multi-reviewer panel on <branch>"
+prompt: "Review the changes on branch `<branch>` vs main. <N> files changed: <summary or list>. Linked issue: <ID or 'none found'>. Recent commits: <list>. Fan out to the eight reviewer agents in parallel and return a consolidated report."
 ```
 
 ## Step 4: Present the result

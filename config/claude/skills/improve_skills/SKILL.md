@@ -17,7 +17,7 @@ Ask unless the user said:
 
 And ask what signal source to prioritize:
 
-- **Cross-session (wide)** — up to ~200 sessions across `~/.claude/projects/*/*.jsonl`, or every session since a date the user names. Default for "is this skill triggering right" or "find missing skills" — trigger patterns and missing-skill signal accumulate over many sessions. Ask how far back; offer "all available." Stream file-by-file and tally signal (fires, misfires, manual workflows that match an existing skill's domain) rather than loading every transcript.
+- **Cross-session (wide)** — up to ~200 sessions (Claude Code: `~/.claude/projects/*/*.jsonl`; opencode: the SQLite DB at `~/.local/share/opencode/opencode.db`, where skill fires are `part` rows with `json_extract(data,'$.tool')='skill'`), or every session since a date the user names. Default for "is this skill triggering right" or "find missing skills" — trigger patterns and missing-skill signal accumulate over many sessions. Ask how far back; offer "all available." Stream file-by-file and tally signal (fires, misfires, manual workflows that match an existing skill's domain) rather than loading every transcript.
 - **Cross-session (recent)** — last ~20 sessions / ~2 weeks. Fast pass focused on current workflows.
 - **Current session** — the session this skill was invoked in. Best for "I just used the skill, critique that run" or "this session shows a workflow that should be a skill."
 - **A specific past session** — by session ID or by rough memory of the session. Useful when the user remembers a run where the skill fired wrong or didn't fire.

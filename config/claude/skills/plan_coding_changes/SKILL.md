@@ -22,14 +22,13 @@ Don't guess at intent. A 30-second clarification beats a 30-minute plan against 
 Search across available sources to understand the problem. Run searches in parallel where possible.
 
 - **Linear** — existing issues, related work, blockers, design docs
-  - `mcp__linear-server__list_issues` (filter by query/team/state)
-  - `mcp__linear-server__list_documents` / `mcp__linear-server__search_documentation`
+  - Linear MCP tools: `list_issues` (filter by query/team/state), `list_documents`, `search_documentation` (tool prefix differs by harness: `mcp__linear-server__…` in Claude Code, `linear-server_…` in opencode)
 - **GitHub** — related PRs, prior code, history
   - `gh pr list --search "<term>"`, `gh search prs "<term>"`
   - `gh search code "<term>"` for cross-repo code search
-- **Codebase** — `grep`/`find` via Bash for known symbols; the `Explore` agent for broad/open-ended searches (3+ queries)
-- **Datadog** (only if the work is observability/incident-related)
-  - `mcp__datadog-mcp__search_datadog_logs`, `search_datadog_monitors`, etc.
+- **Codebase** — `grep`/`find` via Bash for known symbols; the codebase-exploration subagent (`explore` / `Explore`) for broad/open-ended searches (3+ queries)
+- **Datadog** (only if the work is observability/incident-related, and a Datadog MCP is configured)
+  - the Datadog MCP search tools (e.g. `search_datadog_logs`, `search_datadog_monitors`)
 
 Summarize findings for the user. Scale the summary to the size of the change:
 - **Trivial change** — a few lines is enough ("Found the function at `app/foo.rb:42`, no related Linear issues, no recent PRs touching it").
@@ -53,13 +52,13 @@ Before producing any plan, confirm:
 
 **STOP here if the user hasn't confirmed scope.** Don't guess.
 
-## Step 5: Dual-track planning (Claude + Plan agent)
+## Step 5: Dual-track planning (in-session + planning subagent)
 
 Once scope is confirmed, generate two independent plans in parallel and reconcile them.
 
 In a **single message**, do both:
-- Enter plan mode (`EnterPlanMode`) and draft Claude's plan in this session.
-- Spawn the `Plan` agent in parallel via `Agent({ subagent_type: "Plan", ... })`, passing the same scope summary, working directory, and any constraints from Step 4.
+- Draft your own plan in this session (enter plan mode first if your harness has one).
+- In parallel, spawn the planning subagent — `generic_coding_changes_planner` (opencode) or the `Plan` agent (Claude Code) — passing the same scope summary, working directory, and any constraints from Step 4.
 
 When both plans return, compare them:
 - Where they agree → strong signal, lock it in.
@@ -67,7 +66,7 @@ When both plans return, compare them:
 
 ## Step 6: Present the reconciled plan
 
-Present the merged plan to the user. Wait for green light before implementing. Call `ExitPlanMode` once approved.
+Present the merged plan to the user. Wait for green light before implementing (exit plan mode once approved, if applicable).
 
 ## Guardrails
 
