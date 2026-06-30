@@ -25,6 +25,7 @@ If the prompt is genuinely ambiguous (you can't restate it in one sentence), say
 2. **Produce the plan.** Cover:
    - Architecture decisions (and the alternatives you rejected, briefly)
    - File-by-file changes
+   - **Implementation steps** — break the work into an ordered sequence of atomic, independently-committable steps. Each step is self-contained, leaves the branch in a working state, and is sized to a single commit. This breakdown is the contract the implementer executes, so make it explicit and ordered.
    - Test strategy (which specs, what coverage)
    - Risks and unknowns
    - Open questions for the user
@@ -51,6 +52,8 @@ Return a single markdown document with these sections:
 ## Plan
 ### Architecture
 ### File changes
+### Implementation steps (atomic commits)
+<ordered list; each step = one commit: what it changes and how it's verified>
 ### Test strategy
 
 ## Risks & unknowns

@@ -38,6 +38,12 @@
       "git merge-base*": "allow",
       "git rev-parse*": "allow",
 
+      // Local/read-only git ops for the worktree flow (ship_coding_change).
+      // `git worktree remove` refuses to discard a dirty worktree without --force.
+      "git fetch*": "allow",
+      "git worktree*": "allow",
+      "git add*": "allow",
+
       "gh pr view*": "allow",
       "gh pr diff*": "allow",
       "gh pr list*": "allow",
@@ -68,6 +74,21 @@
       "mode": "subagent",
       "model": "anthropic/claude-opus-4-8",
       "prompt": "{file:~/.dotfiles/config/claude/agents/planners/generic_coding_changes_planner.md}"
+    },
+    "coding_implementer": {
+      "description": "Autonomously implements an already-approved coding plan inside a prepared git worktree — writes the code, runs the test suite, and iterates until the plan is satisfied or it hits a blocker. Returns a summary of what changed and the test status. Use when invoked by the ship_coding_change skill, or whenever a fully-specified plan and an existing worktree are handed off for hands-off implementation.",
+      "mode": "subagent",
+      "model": "anthropic/claude-opus-4-8",
+      "prompt": "{file:~/.dotfiles/config/claude/agents/implementers/coding_implementer.md}",
+      "permission": {
+        "bash": {
+          // Test runners for the autonomous implement/verify phase.
+          "bin/rspec*": "allow",
+          "bundle exec rspec*": "allow",
+          // Incremental atomic commits on the worktree branch (local, unpushed, reversible).
+          "git commit*": "allow"
+        }
+      }
     },
     "architecture_reviewer": {
       "description": "Reviews code changes for architectural soundness. Focuses on layering, module boundaries, coupling, abstraction choices, and adherence to the codebase's architectural patterns (MVCQ, command/query split). Use as one reviewer in a multi-reviewer panel.",
