@@ -1,6 +1,6 @@
 ---
 name: plan_coding_changes
-description: Default planning workflow for any code change. Confirm what's being changed, gather context across Linear/GitHub/codebase, produce a reconciled plan, then implement. Use for every code change — small, large, or in-between.
+description: Default planning workflow for any code change. Confirm what's being changed, gather context across Linear/GitHub/codebase, produce a reconciled plan, then implement. Use for every code change — small, large, or in-between. For high-level project framing rather than line-level implementation, use plan_project_approach.
 ---
 
 # Plan coding changes
