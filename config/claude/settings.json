@@ -1,28 +1,5 @@
 {
   "model": "opus[1m]",
-  "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "(Edit|MultiEdit|Write)",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/joseibarra/.claude/hooks/lint-ruby-files.sh"
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/joseibarra/.claude/hooks/improve_nudge.sh"
-          }
-        ]
-      }
-    ]
-  },
   "enabledPlugins": {
     "ruby-lsp@claude-plugins-official": true
   },
