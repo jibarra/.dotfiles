@@ -1,5 +1,6 @@
 # Development
 brew "hugo"
+brew "tailscale"
 
 # GUI applications
 cask "adobe-digital-editions"
