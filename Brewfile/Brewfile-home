@@ -9,6 +9,7 @@ cask "dropbox"
 cask "godot"
 cask "godot-mono"
 cask "syncthing-app"
+cask "unity"
 
 # Mac App Store
 mas "Tripsy", id: 1429967544
