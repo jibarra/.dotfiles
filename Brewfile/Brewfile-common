@@ -9,6 +9,10 @@ brew "opencode"
 brew "trash"
 brew "zsh"
 
+# Fonts
+cask "font-source-code-pro"
+cask "font-meslo-for-powerlevel10k"
+
 # GUI applications
 cask "1password"
 cask "alacritty"
