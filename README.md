@@ -40,7 +40,6 @@ Note that I have separate configs for AI coding agents (e.g. Claude and opencode
 - Install fonts when running install script
 - Accept the Xcode terms during the install script to make the install smoother
 - Move 1password to home only install
-- Install Alfred
 
 # References & sources
 
