@@ -11,7 +11,6 @@ The dotfiles have been split up into folders to represent different responsibili
 - `config/` contains configurations for different applications (e.g. git, shell, Alfred, Alacritty, etc.)
 - `scripts/` contains the scripts that are run via `./install.sh`.
 - `Brewfile/` contains the brewfiles for installing homebrew applications.
-- `Fonts/` contains fonts that I prefer to use. Currently these must be installed manually.
 - `backups/` contains backups for previous dot files and configurations.
 
 # Linux
@@ -37,7 +36,6 @@ Note that I have separate configs for AI coding agents (e.g. Claude and opencode
   - [openskills](https://github.com/numman-ali/openskills)
   - [opencode-handoff](https://github.com/joshuadavidthomas/opencode-handoff)
 - Add homebrew to path during install so it runs all together
-- Install fonts when running install script
 - Accept the Xcode terms during the install script to make the install smoother
 
 # References & sources
