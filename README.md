@@ -39,7 +39,6 @@ Note that I have separate configs for AI coding agents (e.g. Claude and opencode
 - Add homebrew to path during install so it runs all together
 - Install fonts when running install script
 - Accept the Xcode terms during the install script to make the install smoother
-- Move ruby to machine specific or home/work dependent install
 - Move 1password to home only install
 - Install Alfred
 
