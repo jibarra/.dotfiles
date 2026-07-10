@@ -36,6 +36,12 @@ Note that I have separate configs for AI coding agents (e.g. Claude and opencode
   - [plannotator](https://github.com/backnotprop/plannotator)
   - [openskills](https://github.com/numman-ali/openskills)
   - [opencode-handoff](https://github.com/joshuadavidthomas/opencode-handoff)
+- Add homebrew to path during install so it runs all together
+- Install fonts when running install script
+- Accept the Xcode terms during the install script to make the install smoother
+- Move ruby to machine specific or home/work dependent install
+- Move 1password to home only install
+- Install Alfred
 
 # References & sources
 
