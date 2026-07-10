@@ -35,6 +35,8 @@ elif [[ $installation == 'work' ]]; then
   brew bundle --file Brewfile/Brewfile-work
 fi
 
+sudo xcodebuild -license accept
+
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
 # Install Oh My Zsh
