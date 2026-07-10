@@ -1,7 +1,7 @@
 # GUI applications
-cask "arc"
-cask "meetingbar"
+# cask "arc"
+# cask "meetingbar"
 
 # Mac App Store
-mas "GIPHY CAPTURE", id: 668208984
+# mas "GIPHY CAPTURE", id: 668208984
 

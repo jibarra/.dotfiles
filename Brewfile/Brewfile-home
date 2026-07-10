@@ -1,5 +1,6 @@
 # Development
 brew "hugo"
+brew "rbenv"
 brew "tailscale"
 
 # GUI applications
