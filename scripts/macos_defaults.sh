@@ -1,5 +1,8 @@
 #! /bin/bash
 
+##################
+# Finder
+##################
 # Display all files in Finder
 defaults write com.apple.Finder AppleShowAllFiles TRUE
 # Show all file extensions in Finder
@@ -20,6 +23,9 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE
 
 killall Finder
 
+##################
+# Dock
+##################
 # Dock show/hide time
 # No wait
 defaults write com.apple.dock autohide-time-modifier -int 0
@@ -32,20 +38,42 @@ defaults write com.apple.dock autohide -bool true
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
 
+##################
+# Dock related features
+##################
+# Disable expose and mission control
+defaults write com.apple.dock mcx-expose-disabled -bool true
+# Auto hide menu bar
+defaults write NSGlobalDomain _HIHideMenuBar -bool true
+
 killall Dock
 
+##################
+# Keyboard
+##################
 # Keyboard key repeat time
 # Time to initial repeat
 defaults write -g InitialKeyRepeat -int 25
 # Subsequent repeat times
 defaults write -g KeyRepeat -int 1
 
+##################
+# Trackpad
+##################
 # Trackpad tracking speed
 defaults write -g com.apple.mouse.scaling -float 2.0
+# Trackpad tap to click
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+# Trackpad secondary click bottom right corner
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -int 0
+defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -int 0
 # Trackpad disabled with external mouse
 defaults write com.apple.AppleMultitouchTrackpad USBMouseStopsTrackpad 1
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad USBMouseStopsTrackpad 1
 
+##################
+# Autocomplete
+##################
 # Disable auto spelling correction
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # Disable auto text completion
