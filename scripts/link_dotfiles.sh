@@ -17,9 +17,10 @@ mv ~/.zshrc ~/.dotfiles/backups/"${now}"
 ln -F -s ~/.dotfiles/config/shell/.zshrc ~/.zshrc
 
 # Alacritty config
-mv ~/.config/alacritty.toml ~/.dotfiles/backups/"${now}"
-mkdir ~/.config
-ln -F -s ~/.dotfiles/config/alacritty/alacritty.toml ~/.config/alacritty.toml
+mkdir ~/.dotfiles/backups/"${now}"/alacritty
+mv ~/.config/alacritty/alacritty.toml ~/.dotfiles/backups/"${now}"/alacritty
+mkdir ~/.config/alacritty
+ln -F -s ~/.dotfiles/config/alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
 
 # Zed config
 mkdir ~/.dotfiles/backups/"${now}"/zed
