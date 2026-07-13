@@ -41,8 +41,6 @@ defaults write com.apple.dock show-recents -bool false
 ##################
 # Dock related features
 ##################
-# Disable expose and mission control
-defaults write com.apple.dock mcx-expose-disabled -bool true
 # Auto hide menu bar
 defaults write NSGlobalDomain _HIHideMenuBar -bool true
 
@@ -70,6 +68,18 @@ defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -int 0
 # Trackpad disabled with external mouse
 defaults write com.apple.AppleMultitouchTrackpad USBMouseStopsTrackpad 1
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad USBMouseStopsTrackpad 1
+# Mission Control: four-finger swipe up (2 = four fingers, 1 = three, 0 = off)
+defaults write com.apple.AppleMultitouchTrackpad TrackpadFourFingerVertSwipeGesture -int 2
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadFourFingerVertSwipeGesture -int 2
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerVertSwipeGesture -int 0
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerVertSwipeGesture -int 0
+# Swipe between full-screen apps: four-finger horizontal swipe
+defaults write com.apple.AppleMultitouchTrackpad TrackpadFourFingerHorizSwipeGesture -int 2
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadFourFingerHorizSwipeGesture -int 2
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerHorizSwipeGesture -int 0
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 0
+# Enable the Mission Control gesture in the Dock
+defaults write com.apple.dock showMissionControlGestureEnabled -bool true
 
 ##################
 # Autocomplete
