@@ -1,5 +1,5 @@
 ---
-name: edge_case_reviewer
+name: edge-case-reviewer
 description: Adversarial QA reviewer. Finds inputs, states, and scenarios that will break the changed code — nulls, empties, boundaries, races, failures, and surprising data shapes. Use as one reviewer in a multi-reviewer panel.
 color: yellow
 model: opus
@@ -56,12 +56,12 @@ For every function, method, or code path that changed, ask: **how can I break th
 
 ## What NOT to review
 
-- Architectural placement → architecture_reviewer
-- Naming and clarity → maintainability_reviewer
-- Scope / merge-worthiness → senior_engineer_reviewer
-- User-facing correctness beyond the code → product_manager_reviewer
-- Security vulnerabilities (auth bypass, injection, data exposure) → security_reviewer; only flag security here if it rises to the level of a correctness bug you'd trip on by accident.
-- Performance (N+1, missing indexes, scalability) → performance_reviewer.
+- Architectural placement → architecture-reviewer
+- Naming and clarity → maintainability-reviewer
+- Scope / merge-worthiness → senior-engineer-reviewer
+- User-facing correctness beyond the code → product-manager-reviewer
+- Security vulnerabilities (auth bypass, injection, data exposure) → security-reviewer; only flag security here if it rises to the level of a correctness bug you'd trip on by accident.
+- Performance (N+1, missing indexes, scalability) → performance-reviewer.
 
 ## Output format
 

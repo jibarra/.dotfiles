@@ -1,11 +1,11 @@
 ---
-name: finish_worktree_change
-description: Finish a worktree change: push the branch, open or update its PR (chaining create_pr_description for the body), then optionally remove the worktree. The completion counterpart to start_worktree_change. Use when the user asks to finish a worktree, open a PR for the current branch, or wrap up and clean up a worktree.
+name: finish-worktree-change
+description: Finish a worktree change: push the branch, open or update its PR (chaining create-pr-description for the body), then optionally remove the worktree. The completion counterpart to start-worktree-change. Use when the user asks to finish a worktree, open a PR for the current branch, or wrap up and clean up a worktree.
 ---
 
 # Finish worktree change
 
-Complete a change started by `start_worktree_change`: push the branch, open or update its PR (using `create_pr_description` for the body), then optionally remove the worktree.
+Complete a change started by `start-worktree-change`: push the branch, open or update its PR (using `create-pr-description` for the body), then optionally remove the worktree.
 
 ## Step 1: Confirm what's being finished
 
@@ -49,7 +49,7 @@ gh pr create --draft --base main --head <branch> --title "<title>" --body "<body
 
 ## Step 5: Generate the PR body
 
-Invoke the `create_pr_description` skill to draft the Why / What / Risk / Verification body for this branch's diff, and use its output as the `--body`. Don't hand-roll a description here — that skill owns the format and the gap-finding questions.
+Invoke the `create-pr-description` skill to draft the Why / What / Risk / Verification body for this branch's diff, and use its output as the `--body`. Don't hand-roll a description here — that skill owns the format and the gap-finding questions.
 
 ## Step 6: Offer worktree cleanup
 

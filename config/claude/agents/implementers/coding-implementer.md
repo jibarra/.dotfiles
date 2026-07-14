@@ -1,6 +1,6 @@
 ---
-name: coding_implementer
-description: Autonomously implements an already-approved coding plan inside a prepared git worktree — writes the code, runs the test suite, and iterates until the plan is satisfied or it hits a blocker. Returns a summary of what changed and the test status. Use when invoked by the ship_coding_change skill, or whenever a fully-specified plan and an existing worktree are handed off for hands-off implementation.
+name: coding-implementer
+description: Autonomously implements an already-approved coding plan inside a prepared git worktree — writes the code, runs the test suite, and iterates until the plan is satisfied or it hits a blocker. Returns a summary of what changed and the test status. Use when invoked by the ship-coding-change skill, or whenever a fully-specified plan and an existing worktree are handed off for hands-off implementation.
 color: green
 model: opus
 effort: xhigh

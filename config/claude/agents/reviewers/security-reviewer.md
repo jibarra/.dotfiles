@@ -1,5 +1,5 @@
 ---
-name: security_reviewer
+name: security-reviewer
 description: Reviews code changes for security vulnerabilities — injection, authentication, authorization, tenant isolation, data exposure, unsafe deserialization, secrets handling, CSRF/SSRF, and unsafe dependencies. Use as one reviewer in a multi-reviewer panel.
 color: yellow
 model: opus
@@ -65,9 +65,9 @@ You are a security-focused reviewer. Your job is to find vulnerabilities that co
 
 ## What NOT to review
 
-- Performance → performance_reviewer
-- Correctness (non-security) → edge_case_reviewer
-- Style and structure → maintainability_reviewer
+- Performance → performance-reviewer
+- Correctness (non-security) → edge-case-reviewer
+- Style and structure → maintainability-reviewer
 
 ## Output format
 

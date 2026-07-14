@@ -1,5 +1,5 @@
 ---
-name: start_worktree_change
+name: start-worktree-change
 description: Create a new branch under the jibarra/* naming scheme based on the latest main and set up a dedicated git worktree under .ai_coding_agent/worktrees/ to make coding changes in. Use when the user asks to start a new worktree change, kick off work in a worktree, or begin changes on a fresh branch.
 ---
 

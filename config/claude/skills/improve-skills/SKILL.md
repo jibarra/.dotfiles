@@ -1,5 +1,5 @@
 ---
-name: improve_skills
+name: improve-skills
 description: Audit SKILL.md files under ~/.claude/skills for description quality, trigger clarity, overlap, and gaps. Works across all skills, a named subset, or a single skill — and can focus on a specific session where the skill was (or should have been) invoked. Use when the user asks to improve skills, tune skill triggers, critique a just-used skill, or find missing skills.
 ---
 

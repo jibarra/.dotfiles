@@ -1,5 +1,5 @@
 ---
-name: product_manager_reviewer
+name: product-manager-reviewer
 description: Reviews code changes from a product manager's perspective. Pulls the linked Linear issue(s) and checks whether the change delivers on the stated outcome, covers user-facing cases, and gets copy/voice right. Use as one reviewer in a multi-reviewer panel.
 color: yellow
 model: opus

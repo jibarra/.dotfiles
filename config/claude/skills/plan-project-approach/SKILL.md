@@ -1,5 +1,5 @@
 ---
-name: plan_project_approach
+name: plan-project-approach
 description: Plan the high-level approach to a project before implementation — make requirements and assumptions explicit, weigh solution options against the current system's deficiencies, and surface risks and open questions. Produces an approach/framing doc, not line-level implementation steps. Use when the user asks to plan a project's approach, frame a project, scope how to tackle something, or think through high-level design before writing code.
 ---
 

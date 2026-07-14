@@ -38,7 +38,7 @@
       "git merge-base*": "allow",
       "git rev-parse*": "allow",
 
-      // Local/read-only git ops for the worktree flow (ship_coding_change).
+      // Local/read-only git ops for the worktree flow (ship-coding-change).
       // `git worktree remove` refuses to discard a dirty worktree without --force.
       "git fetch*": "allow",
       "git worktree*": "allow",
@@ -73,17 +73,17 @@
     }
   },
   "agent": {
-    "generic_coding_changes_planner": {
-      "description": "Generic planner for coding changes. Gathers context across Linear, GitHub, and the codebase, then produces an implementation plan covering architecture decisions, file changes, test strategy, risks, and tradeoffs. Use when the user asks to plan a code change before implementing, or when invoked as the parallel planner from the `plan_coding_changes` skill.",
+    "generic-coding-changes-planner": {
+      "description": "Generic planner for coding changes. Gathers context across Linear, GitHub, and the codebase, then produces an implementation plan covering architecture decisions, file changes, test strategy, risks, and tradeoffs. Use when the user asks to plan a code change before implementing, or when invoked as the parallel planner from the `plan-coding-changes` skill.",
       "mode": "subagent",
       "model": "anthropic/claude-opus-4-8",
-      "prompt": "{file:~/.dotfiles/config/claude/agents/planners/generic_coding_changes_planner.md}"
+      "prompt": "{file:~/.dotfiles/config/claude/agents/planners/generic-coding-changes-planner.md}"
     },
-    "coding_implementer": {
-      "description": "Autonomously implements an already-approved coding plan inside a prepared git worktree — writes the code, runs the test suite, and iterates until the plan is satisfied or it hits a blocker. Returns a summary of what changed and the test status. Use when invoked by the ship_coding_change skill, or whenever a fully-specified plan and an existing worktree are handed off for hands-off implementation.",
+    "coding-implementer": {
+      "description": "Autonomously implements an already-approved coding plan inside a prepared git worktree — writes the code, runs the test suite, and iterates until the plan is satisfied or it hits a blocker. Returns a summary of what changed and the test status. Use when invoked by the ship-coding-change skill, or whenever a fully-specified plan and an existing worktree are handed off for hands-off implementation.",
       "mode": "subagent",
       "model": "anthropic/claude-opus-4-8",
-      "prompt": "{file:~/.dotfiles/config/claude/agents/implementers/coding_implementer.md}",
+      "prompt": "{file:~/.dotfiles/config/claude/agents/implementers/coding-implementer.md}",
       "permission": {
         "bash": {
           // Test runners for the autonomous implement/verify phase.
@@ -94,59 +94,59 @@
         }
       }
     },
-    "architecture_reviewer": {
+    "architecture-reviewer": {
       "description": "Reviews code changes for architectural soundness. Focuses on layering, module boundaries, coupling, abstraction choices, and adherence to the codebase's architectural patterns (MVCQ, command/query split). Use as one reviewer in a multi-reviewer panel.",
       "mode": "subagent",
       "model": "anthropic/claude-opus-4-8",
-      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/architecture_reviewer.md}"
+      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/architecture-reviewer.md}"
     },
-    "edge_case_reviewer": {
+    "edge-case-reviewer": {
       "description": "Adversarial QA reviewer. Finds inputs, states, and scenarios that will break the changed code — nulls, empties, boundaries, races, failures, and surprising data shapes. Use as one reviewer in a multi-reviewer panel.",
       "mode": "subagent",
       "model": "anthropic/claude-opus-4-8",
-      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/edge_case_reviewer.md}"
+      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/edge-case-reviewer.md}"
     },
-    "jose_reviewer": {
+    "jose-reviewer": {
       "description": "Reviews code changes as Jose. Represents a specific reviewer with strong opinions — YAGNI, atomic changes, reference hygiene, and other personal preferences. Findings from this reviewer are weighted the highest in the panel and take precedence in the final verdict. Use as one reviewer in a multi-reviewer panel.",
       "mode": "subagent",
       "model": "anthropic/claude-opus-4-8",
-      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/jose_reviewer.md}"
+      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/jose-reviewer.md}"
     },
-    "maintainability_reviewer": {
+    "maintainability-reviewer": {
       "description": "Reviews code changes for long-term maintainability. Focuses on naming, duplication, clarity, structure, function length, and whether future readers will understand the code without archaeology. Use as one reviewer in a multi-reviewer panel.",
       "mode": "subagent",
       "model": "anthropic/claude-opus-4-8",
-      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/maintainability_reviewer.md}"
+      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/maintainability-reviewer.md}"
     },
-    "performance_reviewer": {
+    "performance-reviewer": {
       "description": "Reviews code changes for performance and scalability concerns. Focuses on N+1 queries, missing indexes, inefficient loops, caching opportunities, and work that will degrade as data grows. Use as one reviewer in a multi-reviewer panel.",
       "mode": "subagent",
       "model": "anthropic/claude-opus-4-8",
-      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/performance_reviewer.md}"
+      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/performance-reviewer.md}"
     },
-    "product_manager_reviewer": {
+    "product-manager-reviewer": {
       "description": "Reviews code changes from a product manager's perspective. Pulls the linked Linear issue(s) and checks whether the change delivers on the stated outcome, covers user-facing cases, and gets copy/voice right. Use as one reviewer in a multi-reviewer panel.",
       "mode": "subagent",
       "model": "anthropic/claude-opus-4-8",
-      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/product_manager_reviewer.md}"
+      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/product-manager-reviewer.md}"
     },
-    "reviewer_orchestrator": {
+    "reviewer-orchestrator": {
       "description": "Runs a panel of eight specialized reviewers in parallel (architecture, maintainability, edge case, performance, security, senior engineer, product manager, and Jose) and consolidates their findings into a single prioritized report. Jose's findings are weighted highest. Use when you want a thorough multi-perspective review of a set of code changes.",
       "mode": "subagent",
       "model": "anthropic/claude-opus-4-8",
-      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/reviewer_orchestrator.md}"
+      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/reviewer-orchestrator.md}"
     },
-    "security_reviewer": {
+    "security-reviewer": {
       "description": "Reviews code changes for security vulnerabilities — injection, authentication, authorization, tenant isolation, data exposure, unsafe deserialization, secrets handling, CSRF/SSRF, and unsafe dependencies. Use as one reviewer in a multi-reviewer panel.",
       "mode": "subagent",
       "model": "anthropic/claude-opus-4-8",
-      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/security_reviewer.md}"
+      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/security-reviewer.md}"
     },
-    "senior_engineer_reviewer": {
+    "senior-engineer-reviewer": {
       "description": "Holistic \"would I merge this?\" reviewer. Judges scope, restraint, whether the change actually solves the stated problem, and whether the tests meaningfully verify the behavior. Use as one reviewer in a multi-reviewer panel.",
       "mode": "subagent",
       "model": "anthropic/claude-opus-4-8",
-      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/senior_engineer_reviewer.md}"
+      "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/senior-engineer-reviewer.md}"
     }
   }
 }

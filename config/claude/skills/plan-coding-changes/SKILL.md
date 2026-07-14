@@ -1,6 +1,6 @@
 ---
-name: plan_coding_changes
-description: Default planning workflow for any code change. Confirm what's being changed, gather context across Linear/GitHub/codebase, produce a reconciled plan, then implement. Use for every code change — small, large, or in-between. For high-level project framing rather than line-level implementation, use plan_project_approach.
+name: plan-coding-changes
+description: Default planning workflow for any code change. Confirm what's being changed, gather context across Linear/GitHub/codebase, produce a reconciled plan, then implement. Use for every code change — small, large, or in-between. For high-level project framing rather than line-level implementation, use plan-project-approach.
 ---
 
 # Plan coding changes
@@ -58,7 +58,7 @@ Once scope is confirmed, generate two independent plans in parallel and reconcil
 
 In a **single message**, do both:
 - Draft your own plan in this session (enter plan mode first if your harness has one).
-- In parallel, spawn the planning subagent — `generic_coding_changes_planner` (opencode) or the `Plan` agent (Claude Code) — passing the same scope summary, working directory, and any constraints from Step 4.
+- In parallel, spawn the planning subagent — `generic-coding-changes-planner` (opencode) or the `Plan` agent (Claude Code) — passing the same scope summary, working directory, and any constraints from Step 4.
 
 When both plans return, compare them:
 - Where they agree → strong signal, lock it in.

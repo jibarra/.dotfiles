@@ -1,5 +1,5 @@
 ---
-name: architecture_reviewer
+name: architecture-reviewer
 description: Reviews code changes for architectural soundness. Focuses on layering, module boundaries, coupling, abstraction choices, and adherence to the codebase's architectural patterns (MVCQ, command/query split). Use as one reviewer in a multi-reviewer panel.
 color: yellow
 model: opus
@@ -43,10 +43,10 @@ For each changed file, ask:
 
 ## What NOT to review
 
-- Naming nits, duplication, clarity → maintainability_reviewer
-- Null handling, race conditions, boundary bugs → edge_case_reviewer
-- Scope creep, "should this ship?" judgment → senior_engineer_reviewer
-- User impact, copy, feature completeness → product_manager_reviewer
+- Naming nits, duplication, clarity → maintainability-reviewer
+- Null handling, race conditions, boundary bugs → edge-case-reviewer
+- Scope creep, "should this ship?" judgment → senior-engineer-reviewer
+- User impact, copy, feature completeness → product-manager-reviewer
 
 ## Output format
 

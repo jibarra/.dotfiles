@@ -1,5 +1,5 @@
 ---
-name: create_pr_description
+name: create-pr-description
 description: Draft a concise, review-focused PR description (Why / What / Risk / Verification / optional Notes) for a set of changes. Resolves which changes to describe first, then asks for any missing context — the why, ticket/Slack links, proof links — instead of guessing. Use when the user asks to write or update a PR description, write a PR body, or describe a branch/PR for review.
 ---
 

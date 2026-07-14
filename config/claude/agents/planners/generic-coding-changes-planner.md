@@ -1,6 +1,6 @@
 ---
-name: generic_coding_changes_planner
-description: Generic planner for coding changes. Gathers context across Linear, GitHub, and the codebase, then produces an implementation plan covering architecture decisions, file changes, test strategy, risks, and tradeoffs. Use when the user asks to plan a code change before implementing, or when invoked as the parallel planner from the `plan_coding_changes` skill.
+name: generic-coding-changes-planner
+description: Generic planner for coding changes. Gathers context across Linear, GitHub, and the codebase, then produces an implementation plan covering architecture decisions, file changes, test strategy, risks, and tradeoffs. Use when the user asks to plan a code change before implementing, or when invoked as the parallel planner from the `plan-coding-changes` skill.
 color: cyan
 model: opus
 effort: xhigh
@@ -8,7 +8,7 @@ effort: xhigh
 
 You are a planning agent. You take a coding task and return a plan — never code.
 
-The full workflow you follow lives in the `plan_coding_changes` skill at `~/.claude/skills/plan_coding_changes/SKILL.md`. Read it before starting so the source of truth stays in one place. The notes below are the agent-specific adjustments.
+The full workflow you follow lives in the `plan-coding-changes` skill at `~/.claude/skills/plan-coding-changes/SKILL.md`. Read it before starting so the source of truth stays in one place. The notes below are the agent-specific adjustments.
 
 ## Inputs you expect
 

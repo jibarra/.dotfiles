@@ -1,6 +1,6 @@
 ---
-name: ship_coding_change
-description: End-to-end workflow to ship an AI-driven coding change — plan it, create a worktree, implement it autonomously via the coding_implementer subagent, review it, and open a draft PR. Sequences plan_coding_changes, start_worktree_change, code_review, and finish_worktree_change. Use when the user asks to ship or drive a coding change end to end, or take a change from idea to draft PR.
+name: ship-coding-change
+description: End-to-end workflow to ship an AI-driven coding change — plan it, create a worktree, implement it autonomously via the coding-implementer subagent, review it, and open a draft PR. Sequences plan-coding-changes, start-worktree-change, code-review-panel, and finish-worktree-change. Use when the user asks to ship or drive a coding change end to end, or take a change from idea to draft PR.
 ---
 
 # Ship coding change
@@ -11,17 +11,17 @@ The pipeline handles **one change per run**: one plan, one worktree, one branch,
 
 ## Step 1: Plan (gate)
 
-Invoke the `plan_coding_changes` skill. **Do not proceed until the user has approved the reconciled plan and scope.**
+Invoke the `plan-coding-changes` skill. **Do not proceed until the user has approved the reconciled plan and scope.**
 
 The approved plan is the contract handed to the autonomous implementer in Step 3. It should already be **split into an ordered sequence of atomic, commit-sized steps** — the planner produces this breakdown. Because that implementer runs in a subagent and **cannot ask questions mid-run**, every open question must be resolved here. Capture from the plan: the ordered steps, the file-by-file changes, the test strategy, and the acceptance criteria.
 
 ## Step 2: Start the worktree
 
-Invoke the `start_worktree_change` skill to create the `jibarra/*` branch and worktree under `.ai_coding_agent/worktrees/<name>` off the latest main. Note the **worktree path** and **branch name** — you hand both to the implementer next.
+Invoke the `start-worktree-change` skill to create the `jibarra/*` branch and worktree under `.ai_coding_agent/worktrees/<name>` off the latest main. Note the **worktree path** and **branch name** — you hand both to the implementer next.
 
 ## Step 3: Implement autonomously
 
-Spawn the `coding_implementer` subagent (the `Task` tool in opencode, the `Agent` tool in Claude Code). The prompt must include:
+Spawn the `coding-implementer` subagent (the `Task` tool in opencode, the `Agent` tool in Claude Code). The prompt must include:
 
 - The approved plan from Step 1
 - The worktree path and branch from Step 2
@@ -35,7 +35,7 @@ The implementer takes the plan's **ordered atomic steps** and implements them on
 
 ## Step 4: Review (on by default, skippable)
 
-By default, invoke the `code_review` skill on the worktree diff before publishing. For genuinely trivial changes, offer to skip it.
+By default, invoke the `code-review-panel` skill on the worktree diff before publishing. For genuinely trivial changes, offer to skip it.
 
 Only **Blocking** findings are auto-fixed. Everything else is deferred, not dropped:
 
@@ -47,7 +47,7 @@ Only **Blocking** findings are auto-fixed. Everything else is deferred, not drop
 
 ## Step 5: Finish — push + draft PR
 
-Invoke the `finish_worktree_change` skill. The branch already carries the implementer's atomic commits, so this mostly pushes them (its commit gate still catches any stray uncommitted work), opens a **draft** PR using `create_pr_description` for the body, and offers worktree cleanup.
+Invoke the `finish-worktree-change` skill. The branch already carries the implementer's atomic commits, so this mostly pushes them (its commit gate still catches any stray uncommitted work), opens a **draft** PR using `create-pr-description` for the body, and offers worktree cleanup.
 
 ## Step 6: Report every review finding
 

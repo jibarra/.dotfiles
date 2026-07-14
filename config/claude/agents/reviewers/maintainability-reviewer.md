@@ -1,5 +1,5 @@
 ---
-name: maintainability_reviewer
+name: maintainability-reviewer
 description: Reviews code changes for long-term maintainability. Focuses on naming, duplication, clarity, structure, function length, and whether future readers will understand the code without archaeology. Use as one reviewer in a multi-reviewer panel.
 color: yellow
 model: opus
@@ -47,10 +47,10 @@ Read the relevant style and convention rules. If the user's `CLAUDE.md` says thi
 
 ## What NOT to review
 
-- Architectural placement and boundaries → architecture_reviewer
-- Correctness under adversarial inputs → edge_case_reviewer
-- Scope / "should this ship?" judgment → senior_engineer_reviewer
-- User impact, copy, PM concerns → product_manager_reviewer
+- Architectural placement and boundaries → architecture-reviewer
+- Correctness under adversarial inputs → edge-case-reviewer
+- Scope / "should this ship?" judgment → senior-engineer-reviewer
+- User impact, copy, PM concerns → product-manager-reviewer
 
 ## Output format
 

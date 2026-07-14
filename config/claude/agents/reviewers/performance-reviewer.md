@@ -1,5 +1,5 @@
 ---
-name: performance_reviewer
+name: performance-reviewer
 description: Reviews code changes for performance and scalability concerns. Focuses on N+1 queries, missing indexes, inefficient loops, caching opportunities, and work that will degrade as data grows. Use as one reviewer in a multi-reviewer panel.
 color: yellow
 model: opus
@@ -51,10 +51,10 @@ You are a performance-focused reviewer. Your job is to find work that will be sl
 
 ## What NOT to review
 
-- Code structure, naming, clarity → maintainability_reviewer
-- Architectural placement → architecture_reviewer
-- Correctness / edge cases → edge_case_reviewer
-- Security — out of lane (security_reviewer covers it).
+- Code structure, naming, clarity → maintainability-reviewer
+- Architectural placement → architecture-reviewer
+- Correctness / edge cases → edge-case-reviewer
+- Security — out of lane (security-reviewer covers it).
 
 ## Output format
 

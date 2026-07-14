@@ -1,11 +1,11 @@
 ---
-name: code_review
+name: code-review-panel
 description: Run a multi-reviewer panel (architecture, maintainability, edge case, performance, security, senior engineer, product manager, and Jose) on a set of code changes and return a consolidated, prioritized report. Jose's findings are weighted highest. Use when the user asks to code review changes, review a PR, review the current branch, or get a second opinion before merging.
 ---
 
 # Code review panel
 
-Invokes the `reviewer_orchestrator` agent to fan out to eight specialized reviewer agents in parallel and consolidate their findings into one report.
+Invokes the `reviewer-orchestrator` agent to fan out to eight specialized reviewer agents in parallel and consolidate their findings into one report.
 
 ## Step 1: Resolve what "changes" means
 
@@ -35,7 +35,7 @@ For large diffs, don't paste the whole thing into the orchestrator prompt — le
 
 ## Step 3: Launch the orchestrator
 
-Launch the `reviewer_orchestrator` agent as a subagent (the `Task` tool in opencode, the `Agent` tool in Claude Code). In the prompt, include:
+Launch the `reviewer-orchestrator` agent as a subagent (the `Task` tool in opencode, the `Agent` tool in Claude Code). In the prompt, include:
 
 - The resolved scope (e.g., "Review the diff from `git diff main...HEAD` on branch `jibarra/foo`")
 - The context package from Step 2
@@ -45,7 +45,7 @@ Launch the `reviewer_orchestrator` agent as a subagent (the `Task` tool in openc
 Example invocation (subagent call):
 
 ```
-subagent_type: "reviewer_orchestrator"
+subagent_type: "reviewer-orchestrator"
 description: "Multi-reviewer panel on <branch>"
 prompt: "Review the changes on branch `<branch>` vs main. <N> files changed: <summary or list>. Linked issue: <ID or 'none found'>. Recent commits: <list>. Fan out to the eight reviewer agents in parallel and return a consolidated report."
 ```
