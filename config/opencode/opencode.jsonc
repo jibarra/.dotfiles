@@ -15,6 +15,9 @@
     "bash": {
       "*": "ask",
 
+      // Read-only shell utilities. Trailing space (not `cmd*`) is deliberate:
+      // it forces a delimiter so a prefix can't match a longer command name
+      // (e.g. `ps *` never matches `psql`, `comm *` never matches `command`).
       "cat *": "allow",
       "echo *": "allow",
       "grep *": "allow",
@@ -22,11 +25,42 @@
       "ls *": "allow",
       "rg *": "allow",
       "tail *": "allow",
+      "pwd *": "allow",
+      "which *": "allow",
+      "type *": "allow",
+      "whoami *": "allow",
+      "hostname *": "allow",
+      "uname *": "allow",
+      "date *": "allow",
+      "wc *": "allow",
+      "uniq *": "allow",
+      "cut *": "allow",
+      "comm *": "allow",
+      "nl *": "allow",
+      "column *": "allow",
+      "basename *": "allow",
+      "dirname *": "allow",
+      "realpath *": "allow",
+      "stat *": "allow",
+      "file *": "allow",
+      "tree *": "allow",
+      "diff *": "allow",
+      "cmp *": "allow",
+      "du *": "allow",
+      "df *": "allow",
+      "ps *": "allow",
+      "jq *": "allow",
+      "bat *": "allow",
+      "printenv *": "allow",
+      "shasum *": "allow",
+      "md5 *": "allow",
 
-      // Accepted tradeoff: on GNU sed (Linux) the `e` command/`s///e` flag can
-      // run arbitrary shell, which this allow does not (and cannot, via glob)
-      // block. Allowed anyway for convenience; writes are reversible under git.
+      // Accepted tradeoff: sed (GNU `e`/`s///e`), awk (system()/`print >`), and
+      // sort (`-o` writes) can each run shell or write files, which these globs
+      // cannot block. Allowed for convenience; writes are reversible under git.
       "sed *": "allow",
+      "awk *": "allow",
+      "sort *": "allow",
 
       // No trailing space so bare `git diff`/`git status` match too.
       "git diff*": "allow",
@@ -37,6 +71,19 @@
       "git branch*": "allow",
       "git merge-base*": "allow",
       "git rev-parse*": "allow",
+      "git rev-list*": "allow",
+      "git shortlog*": "allow",
+      "git describe*": "allow",
+      "git ls-files*": "allow",
+      "git ls-tree*": "allow",
+      "git cat-file*": "allow",
+      "git grep*": "allow",
+      "git reflog*": "allow",
+      "git stash list*": "allow",
+      "git remote*": "allow",
+      "git config --get*": "allow",
+      "git config --list*": "allow",
+      "git config -l*": "allow",
 
       // Local/read-only git ops for the worktree flow (ship-coding-change).
       // `git worktree remove` refuses to discard a dirty worktree without --force.
@@ -47,12 +94,25 @@
       "gh pr view*": "allow",
       "gh pr diff*": "allow",
       "gh pr list*": "allow",
+      "gh pr checks*": "allow",
+      "gh pr status*": "allow",
       "gh issue view*": "allow",
+      "gh issue list*": "allow",
       "gh search*": "allow",
+      "gh run view*": "allow",
+      "gh run list*": "allow",
+      "gh repo view*": "allow",
+      "gh workflow view*": "allow",
+      "gh workflow list*": "allow",
+      "gh release view*": "allow",
+      "gh release list*": "allow",
+      "gh label list*": "allow",
+      "gh auth status*": "allow",
 
-      // Potentially destructive and non-reversible
-      // find can -delete/-exec; rm is irreversible.
+      // Potentially destructive and non-reversible.
+      // find can -delete/-exec; fd can --exec/-X; rm is irreversible.
       "find *": "ask",
+      "fd *": "ask",
       "rm *": "ask",
     },
     "external_directory": {
