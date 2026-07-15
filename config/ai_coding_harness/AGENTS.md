@@ -1,18 +1,30 @@
+## Before coding
+
+- State your assumptions explicitly. If a request is ambiguous, present the plausible interpretations and ask rather than silently picking one.
+- Before writing code, identify the simplest approach that solves the problem and name anything confusing about the request.
+
 ## Code style
 
 - Use comments sparingly. Explaining why something was done in comments is more useful than what is done. Only explain what code is doing when the code is very complex.
 - Minimize call-stack depth. If understanding a piece of code requires chasing through many methods — and especially many files — that's a problem. Prefer flat, explicit code over multi-layer dispatch.
 - Prefer boring and explicit over clever and magical. Small surfaces beat big ones (a method that does one thing beats a method with seven optional parameters). If a solution feels clever, ask whether a boring version would work — boring wins.
+- Match the style of the surrounding code rather than imposing your own preferences.
 
 ## Scope and design
 
 - Keep code changes small and focused - aim for atomic commits that address one specific issue or feature at a time. Break larger tasks into smaller, separable tasks that can be reviewed, tested, and committed independently. Each change should be self-contained and have a clear purpose.
-- Default to YAGNI (You Aren't Gonna Need It). Don't introduce abstractions, configuration options, feature flags, or defensive code for conditions that don't currently exist. The wrong abstraction is worse than no abstraction — if you don't yet know the right shape, duplicate the code. Three concrete side-by-side implementations will teach you the correct abstraction more reliably than a premature one everyone has to bend around.
+- Touch only what you must. Every modified line should directly address the request — no unrequested features, no drive-by refactors, no speculative changes.
+- Default to YAGNI (You Aren't Gonna Need It). Write the minimum code that solves the problem; nothing speculative. Don't introduce abstractions, configuration options, feature flags, or defensive code for conditions that don't currently exist. The wrong abstraction is worse than no abstraction — if you don't yet know the right shape, duplicate the code. Three concrete side-by-side implementations will teach you the correct abstraction more reliably than a premature one everyone has to bend around.
 - For non-trivial design decisions, discuss the approach before implementing. Lay out the tradeoffs, propose a recommendation, and wait for a green light. Terse command-style "just build it" is fine for small changes; anything with architectural implications deserves a short design conversation first.
 
 ## Making changes
 
 - When removing code (methods, classes, constants, etc.), always identify and handle all references to that code. This includes: updating imports, removing method calls, updating tests, cleaning up configuration files, and addressing any dependencies. Don't leave dangling references that would cause compilation errors or runtime issues.
+- Clean up after yourself: remove the imports and functions your own edits orphaned. Leave anything that existed before your change untouched unless the request explicitly calls for it.
+
+## Execution
+
+- Define success criteria before you start, then loop until they're verified. Turn vague tasks into measurable checkpoints and a brief multi-step plan with verification steps.
 
 ## Testing
 
