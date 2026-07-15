@@ -5,15 +5,15 @@
     "user_message": false
   },
   "sounds": {
-    "permission": "~/.dotfiles/config/opencode/sounds/peasant_milord.wav",
-    "complete": "~/.dotfiles/config/opencode/sounds/orc_work_complete.wav",
-    "subagent_complete": "~/.dotfiles/config/opencode/sounds/peasant_jobs_done.wav",
-    "error": "~/.dotfiles/config/opencode/sounds/troll_what_you_want_me_kill.wav",
-    "question": "~/.dotfiles/config/opencode/sounds/ogre_huh_what.wav",
-    "user_cancelled": "~/.dotfiles/config/opencode/sounds/orc_huh.wav",
-    "plan_exit": "~/.dotfiles/config/opencode/sounds/orc_zug_zug.wav",
-    "session_started": "~/.dotfiles/config/opencode/sounds/orc_dabu.wav",
-    "user_message": "~/.dotfiles/config/opencode/sounds/orc_loktar.wav",
-    "client_connected": "~/.dotfiles/config/opencode/sounds/peasant_hello.wav"
+    "permission": "~/.dotfiles/config/ai_coding_harness/sounds/peasant_milord.wav",
+    "complete": "~/.dotfiles/config/ai_coding_harness/sounds/orc_work_complete.wav",
+    "subagent_complete": "~/.dotfiles/config/ai_coding_harness/sounds/peasant_jobs_done.wav",
+    "error": "~/.dotfiles/config/ai_coding_harness/sounds/troll_what_you_want_me_kill.wav",
+    "question": "~/.dotfiles/config/ai_coding_harness/sounds/ogre_huh_what.wav",
+    "user_cancelled": "~/.dotfiles/config/ai_coding_harness/sounds/orc_huh.wav",
+    "plan_exit": "~/.dotfiles/config/ai_coding_harness/sounds/orc_zug_zug.wav",
+    "session_started": "~/.dotfiles/config/ai_coding_harness/sounds/orc_dabu.wav",
+    "user_message": "~/.dotfiles/config/ai_coding_harness/sounds/orc_loktar.wav",
+    "client_connected": "~/.dotfiles/config/ai_coding_harness/sounds/peasant_hello.wav"
   }
 }

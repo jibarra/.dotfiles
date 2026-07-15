@@ -13,3 +13,5 @@ lsp/*
 # This isn't standardized yet but how I split off worktrees for AI coding agents
 .ai_coding_agent/worktrees/*
 
+
+**/.claude/settings.local.json
