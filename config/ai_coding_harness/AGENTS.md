@@ -6,6 +6,5 @@
 - For non-trivial design decisions, discuss the approach before implementing. Lay out the tradeoffs, propose a recommendation, and wait for a green light. Terse command-style "just build it" is fine for small changes; anything with architectural implications deserves a short design conversation first.
 - When removing code (methods, classes, constants, etc.), always identify and handle all references to that code. This includes: updating imports, removing method calls, updating tests, cleaning up configuration files, and addressing any dependencies. Don't leave dangling references that would cause compilation errors or runtime issues.
 - When we update code, we should run tests for that file (if they exist) to ensure we didn't break anything
-- When we run tests for ruby files, we should use bin/rspec instead of just rspec.
 - When testing, avoid mocking unless we need to make a call to an external service.
 
