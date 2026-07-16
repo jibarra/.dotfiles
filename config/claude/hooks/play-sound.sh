@@ -7,7 +7,15 @@ SOUNDS="$HOME/.dotfiles/config/ai_coding_harness/sounds"
 input=$(cat)
 
 case "$1" in
-  stop)          file="orc_work_complete.wav"; body="Task complete" ;;
+  stop)
+    body="Task complete"
+    # Randomly play one of the two completion sounds.
+    if [ $(( RANDOM % 2 )) -eq 0 ]; then
+      file="orc_work_complete.wav"
+    else
+      file="peasant_jobs_done.wav"
+    fi
+    ;;
   subagent-stop) file="peasant_jobs_done.wav"; body="Subagent finished" ;;
   session-start) file="orc_dabu.wav";          body="Session started" ;;
   notification)
