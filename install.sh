@@ -11,6 +11,10 @@ else
   exit 1
 fi
 
+# Available to every script sourced below, and persisted for future shells by
+# create_machine_specific_zshrc.sh.
+export DOTFILES_ENV="$installation"
+
 # Ask for the administrator password upfront
 sudo -v
 
@@ -30,9 +34,9 @@ brew update
 # Install all our dependencies with bundle (See Brewfile)
 brew bundle --file Brewfile/Brewfile-common
 
-if [[ $installation == 'home' ]]; then
+if [[ $DOTFILES_ENV == 'home' ]]; then
   brew bundle --file Brewfile/Brewfile-home
-elif [[ $installation == 'work' ]]; then
+elif [[ $DOTFILES_ENV == 'work' ]]; then
   brew bundle --file Brewfile/Brewfile-work
 fi
 

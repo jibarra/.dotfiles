@@ -5,14 +5,17 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Sets DOTFILES_ENV (home/work) and any other per-machine values. Sourced
+# first so the config files below can branch on it. The loop skips it via the
+# *.zshrc* exclusion.
+source ~/.dotfiles/config/shell/.machine_specific_zshrc
+
 for DOTFILE in `find ~/.dotfiles/config/shell`
 do
   if [[ "$DOTFILE" != *".zshrc"* ]]; then
     [ -f "$DOTFILE" ] && source "$DOTFILE"
   fi
 done
-
-source ~/.machine_specific_zshrc
 
 # Load Oh My ZSH
 export ZSH=~/.oh-my-zsh

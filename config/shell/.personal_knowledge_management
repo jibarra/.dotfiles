@@ -1,0 +1,34 @@
+# Personal knowledge management — frictionless capture into the Obsidian
+# vault. These only append to inbox.md; they never invoke Claude.
+#
+# The vault is chosen by DOTFILES_ENV (set per machine in
+# .machine_specific_zshrc), so the same short commands work on both machines.
+
+case "$DOTFILES_ENV" in
+  home) export VAULT="$HOME/Documents/jose/Documents/Notes/Vault" ;;
+  work) export VAULT="$HOME/vaults/work" ;;  # TODO: set when the work vault exists
+  *)    export VAULT="" ;;
+esac
+
+_pkm_capture() { # $1 usage label, $2 printf format, rest: text
+  local label="$1" fmt="$2"; shift 2
+  [ -z "$VAULT" ] && { echo "no vault: DOTFILES_ENV is '${DOTFILES_ENV:-unset}'"; return 1; }
+  [ -z "$*" ] && { echo "usage: $label <text>"; return 1; }
+  printf -- "$fmt" "$*" >> "$VAULT/00-Inbox/inbox.md" && echo "-> inbox"
+}
+
+# t renew passport [due: 2026-08-01]
+t() { _pkm_capture t "- [ ] %s [added: $(date +%F)]\n" "$@"; }
+
+# n pizza dough 65% hydration #til
+n() { _pkm_capture n "\n### $(date '+%F %H:%M')\n%s\n" "$@"; }
+
+# open a Claude session in the vault
+c() { cd "$VAULT" && claude; }
+
+# one-shot focus query, e.g. tq "what should I do next"
+tq() { (cd "$VAULT" && claude -p "/todo-focus $*"); }
+
+# Quotes needed only if your text contains shell characters:
+#   t "email Bob re: budget (A)"
+# Everything lands in inbox.md; /todo-organize and /note-organize file it later.
