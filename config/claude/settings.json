@@ -87,7 +87,7 @@
       "Bash(fd:*)",
       "Bash(rm:*)"
     ],
-    "defaultMode": "acceptEdits",
+    "defaultMode": "plan",
     "additionalDirectories": [
       "~/.dotfiles/config/claude",
       "~/.dotfiles/config/opencode",
