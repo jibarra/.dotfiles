@@ -1,13 +1,5 @@
 {
-  "model": "opus[1m]",
-  "enabledPlugins": {
-    "ruby-lsp@claude-plugins-official": true
-  },
-  "alwaysThinkingEnabled": true,
-  "effortLevel": "xhigh",
-  "theme": "auto",
   "permissions": {
-    "defaultMode": "acceptEdits",
     "allow": [
       "Bash(cat:*)",
       "Bash(echo:*)",
@@ -95,6 +87,7 @@
       "Bash(fd:*)",
       "Bash(rm:*)"
     ],
+    "defaultMode": "acceptEdits",
     "additionalDirectories": [
       "~/.dotfiles/config/claude",
       "~/.dotfiles/config/opencode",
@@ -102,15 +95,44 @@
       "~/.config/opencode"
     ]
   },
+  "model": "opus[1m]",
   "hooks": {
     "Stop": [
-      { "hooks": [{ "type": "command", "command": "~/.claude/hooks/play-sound.sh stop" }] }
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/play-sound.sh stop"
+          }
+        ]
+      }
     ],
     "SessionStart": [
-      { "hooks": [{ "type": "command", "command": "~/.claude/hooks/play-sound.sh session-start" }] }
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/play-sound.sh session-start"
+          }
+        ]
+      }
     ],
     "Notification": [
-      { "hooks": [{ "type": "command", "command": "~/.claude/hooks/play-sound.sh notification" }] }
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/play-sound.sh notification"
+          }
+        ]
+      }
     ]
-  }
+  },
+  "enabledPlugins": {
+    "ruby-lsp@claude-plugins-official": true
+  },
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "xhigh",
+  "theme": "auto",
+  "agentPushNotifEnabled": true
 }
