@@ -14,7 +14,7 @@ _pkm_capture() { # $1 usage label, $2 printf format, rest: text
   local label="$1" fmt="$2"; shift 2
   [ -z "$VAULT" ] && { echo "no vault: DOTFILES_ENV is '${DOTFILES_ENV:-unset}'"; return 1; }
   [ -z "$*" ] && { echo "usage: $label <text>"; return 1; }
-  printf -- "$fmt" "$*" >> "$VAULT/00-Inbox/inbox.md" && echo "-> inbox"
+  printf -- "$fmt" "$*" >> "$VAULT/knowledge-base/00-Inbox/inbox.md" && echo "-> inbox"
 }
 
 # t renew passport [due: 2026-08-01]
