@@ -12,5 +12,7 @@ cat > "$MACHINE_ZSHRC" <<EOF
 # here. Only these comments are committed — local values are kept out of the
 # repo with: git update-index --skip-worktree config/shell/.machine_specific_zshrc
 
+git -C ~/.dotfiles update-index --skip-worktree config/shell/.machine_specific_zshrc
+
 export DOTFILES_ENV="${DOTFILES_ENV}"
-EOF
+
