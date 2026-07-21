@@ -1,4 +1,18 @@
-if [ ! -f ~/.machine_specific_gitconfig ]; then
-  touch ~/.machine_specific_gitconfig
+MACHINE_GITCONFIG=~/.dotfiles/config/git/.machine_specific_gitconfig
+
+if [ ! -f "$MACHINE_GITCONFIG" ]; then
+  cat > "$MACHINE_GITCONFIG" <<'EOF'
+# Specific to this machine. Only these comments are committed — machine-local
+# values are kept out of the repo with:
+# git update-index --skip-worktree config/git/.machine_specific_gitconfig
+#
+# Fill in your per-machine git identity, e.g.:
+# [user]
+#   email = you@example.com
+#   signingkey = ssh-ed25519 AAAA...
+EOF
 fi
 
+# skip-worktree is a per-clone index flag; set it every install so machine-local
+# values never get committed.
+git -C ~/.dotfiles update-index --skip-worktree config/git/.machine_specific_gitconfig

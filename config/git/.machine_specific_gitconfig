@@ -1,0 +1,8 @@
+# Specific to this machine. Only these comments are committed — machine-local
+# values are kept out of the repo with:
+# git update-index --skip-worktree config/git/.machine_specific_gitconfig
+#
+# Fill in your per-machine git identity, e.g.:
+# [user]
+#   email = you@example.com
+#   signingkey = ssh-ed25519 AAAA...

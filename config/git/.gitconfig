@@ -25,7 +25,7 @@
 	helper = osxkeychain
 
 [include]
-	path = ~/.machine_specific_gitconfig
+	path = ~/.dotfiles/config/git/.machine_specific_gitconfig
 
 [gpg]
 	format = ssh
