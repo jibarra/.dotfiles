@@ -1,5 +1,5 @@
 # Personal knowledge management — frictionless capture into the Obsidian
-# vault. These only append to inbox.md; they never invoke Claude.
+# vault. These only capture; they never invoke Claude.
 #
 # The vault is chosen by DOTFILES_ENV (set per machine in
 # .machine_specific_zshrc), so the same short commands work on both machines.
@@ -10,18 +10,28 @@ case "$DOTFILES_ENV" in
   *)    export VAULT="" ;;
 esac
 
-_pkm_capture() { # $1 usage label, $2 printf format, rest: text
-  local label="$1" fmt="$2"; shift 2
-  [ -z "$VAULT" ] && { echo "no vault: DOTFILES_ENV is '${DOTFILES_ENV:-unset}'"; return 1; }
-  [ -z "$*" ] && { echo "usage: $label <text>"; return 1; }
-  printf -- "$fmt" "$*" >> "$VAULT/knowledge-base/00-Inbox/inbox.md" && echo "-> inbox"
+_pkm_dir() {
+  [ -z "$VAULT" ] && { echo "no vault: DOTFILES_ENV is '${DOTFILES_ENV:-unset}'" >&2; return 1; }
+  printf '%s' "$VAULT/knowledge-base/00-Inbox"
 }
 
 # t renew passport [due: 2026-08-01]
-t() { _pkm_capture t "- [ ] %s [added: $(date +%F)]\n" "$@"; }
+t() {
+  local dir; dir=$(_pkm_dir) || return 1
+  [ -z "$*" ] && { echo "usage: t <task>"; return 1; }
+  printf -- "- [ ] %s [added: %s]\n" "$*" "$(date +%F)" >> "$dir/todos.md" && echo "-> todos.md"
+}
 
 # n pizza dough 65% hydration #til
-n() { _pkm_capture n "\n### $(date '+%F %H:%M')\n%s\n" "$@"; }
+n() {
+  local dir; dir=$(_pkm_dir) || return 1
+  [ -z "$*" ] && { echo "usage: n <note>"; return 1; }
+  local ts slug file
+  ts=$(date '+%F-%H%M%S')
+  slug=$(printf '%s' "$*" | tr '[:upper:]' '[:lower:]' | tr -c 'a-z0-9' '-' | tr -s '-' | sed 's/^-//; s/-$//' | cut -c1-40 | sed 's/-$//')
+  [ -n "$slug" ] && file="$dir/$ts-$slug.md" || file="$dir/$ts.md"
+  printf '%s\n' "$*" > "$file" && echo "-> ${file##*/}"
+}
 
 # open a Claude session in the vault
 c() { cd "$VAULT" && claude; }
@@ -31,4 +41,4 @@ tq() { (cd "$VAULT" && claude -p "/todo-focus $*"); }
 
 # Quotes needed only if your text contains shell characters:
 #   t "email Bob re: budget (A)"
-# Everything lands in inbox.md; /todo-organize and /note-organize file it later.
+# /todo-organize and /note-organize file captures later.
