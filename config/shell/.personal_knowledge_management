@@ -6,7 +6,7 @@
 
 case "$DOTFILES_ENV" in
   home) export VAULT="$HOME/Documents/jose/Documents/Notes/Vault" ;;
-  work) export VAULT="$HOME/vaults/work" ;;  # TODO: set when the work vault exists
+  work) export VAULT="$HOME/Documents/personal-knowledge-base" ;;
   *)    export VAULT="" ;;
 esac
 
