@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "disable_ai": false,
   "telemetry": {
     "diagnostics": false,
     "metrics": false,
@@ -16,6 +17,9 @@
   "cli_default_open_behavior": "new_window",
   "agent_servers": {
     "claude-acp": {
+      "default_config_options": {
+        "mode": "plan"
+      },
       "type": "registry",
     },
   },
@@ -41,6 +45,7 @@
     },
   },
   "agent": {
+    "play_sound_when_agent_done": "always",
     "dock": "right",
     "default_model": {
       "provider": "zed.dev",
