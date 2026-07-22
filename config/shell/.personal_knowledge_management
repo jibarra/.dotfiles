@@ -5,7 +5,7 @@
 # .machine_specific_zshrc), so the same short commands work on both machines.
 
 case "$DOTFILES_ENV" in
-  home) export VAULT="$HOME/Documents/jose/Documents/Notes/Vault" ;;
+  home) export VAULT="$HOME/Documents/jose/Documents/Notes" ;;
   work) export VAULT="$HOME/Documents/personal-knowledge-base" ;;
   *)    export VAULT="" ;;
 esac
