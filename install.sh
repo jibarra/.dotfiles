@@ -53,5 +53,8 @@ source scripts/zsh_powerlevel10k_theme.sh
 source scripts/ssh_key_to_keychain.sh
 source scripts/zsh_install_syntax_highlighting.sh
 source scripts/link_dotfiles.sh
+if [[ $DOTFILES_ENV == 'home' ]]; then
+  source scripts/setup_ollama.sh
+fi
 source scripts/macos_defaults.sh
 
