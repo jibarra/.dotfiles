@@ -15,22 +15,34 @@ _pkm_dir() {
   printf '%s' "$VAULT/knowledge-base/00-Inbox"
 }
 
-# t renew passport [due: 2026-08-01]
-t() {
-  local dir; dir=$(_pkm_dir) || return 1
-  [ -z "$*" ] && { echo "usage: t <task>"; return 1; }
-  printf -- "- [ ] %s [added: %s]\n" "$*" "$(date +%F)" >> "$dir/todos.md" && echo "-> todos.md"
+# Text from args, or from stdin when piped/redirected and no args were given.
+# Args win; the [ -t 0 ] guard avoids hanging at an interactive prompt.
+_pkm_input() {
+  if [ -n "$*" ]; then
+    printf '%s' "$*"
+  elif [ ! -t 0 ]; then
+    cat
+  fi
 }
 
-# n pizza dough 65% hydration #til
+# t renew passport [due: 2026-08-01]   (or: pbpaste | t)
+t() {
+  local dir; dir=$(_pkm_dir) || return 1
+  local task; task=$(_pkm_input "$@")
+  [ -z "$task" ] && { echo "usage: t <task>  (or pipe text via stdin)"; return 1; }
+  printf -- "- [ ] %s [added: %s]\n" "$task" "$(date +%F)" >> "$dir/todos.md" && echo "-> todos.md"
+}
+
+# n pizza dough 65% hydration #til   (or: pbpaste | n)
 n() {
   local dir; dir=$(_pkm_dir) || return 1
-  [ -z "$*" ] && { echo "usage: n <note>"; return 1; }
+  local body; body=$(_pkm_input "$@")
+  [ -z "$body" ] && { echo "usage: n <note>  (or pipe text via stdin)"; return 1; }
   local ts slug file
   ts=$(date '+%F-%H%M%S')
-  slug=$(printf '%s' "$*" | tr '[:upper:]' '[:lower:]' | tr -c 'a-z0-9' '-' | tr -s '-' | sed 's/^-//; s/-$//' | cut -c1-40 | sed 's/-$//')
+  slug=$(printf '%s' "$body" | tr '[:upper:]' '[:lower:]' | tr -c 'a-z0-9' '-' | tr -s '-' | sed 's/^-//; s/-$//' | cut -c1-40 | sed 's/-$//')
   [ -n "$slug" ] && file="$dir/$ts-$slug.md" || file="$dir/$ts.md"
-  printf '%s\n' "$*" > "$file" && echo "-> ${file##*/}"
+  printf '%s\n' "$body" > "$file" && echo "-> ${file##*/}"
 }
 
 # open a Claude session in the vault
@@ -41,4 +53,10 @@ tq() { (cd "$VAULT" && claude -p "/todo-focus $*"); }
 
 # Quotes needed only if your text contains shell characters:
 #   t "email Bob re: budget (A)"
+# For arbitrary text (quotes, $, backticks, multiline), pipe it in or feed a
+# quoted-delimiter heredoc on stdin — with no args it's read verbatim:
+#   pbpaste | n
+#   n <<'EOF'
+#   it's a "note" with $vars and `backticks`
+#   EOF
 # /todo-organize and /note-organize file captures later.
