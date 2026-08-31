@@ -141,6 +141,11 @@
       }
     }
   },
+  "attribution": {
+    "commit": false,
+    "pr": false,
+    "sessionUrl": false
+  },
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
   "theme": "auto",
