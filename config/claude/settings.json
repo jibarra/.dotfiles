@@ -142,8 +142,8 @@
     }
   },
   "attribution": {
-    "commit": false,
-    "pr": false,
+    "commit": "",
+    "pr": "",
     "sessionUrl": false
   },
   "alwaysThinkingEnabled": true,
