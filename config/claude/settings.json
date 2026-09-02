@@ -147,6 +147,7 @@
     "sessionUrl": false
   },
   "alwaysThinkingEnabled": true,
+  "cleanupPeriodDays": 365,
   "effortLevel": "high",
   "theme": "auto",
   "agentPushNotifEnabled": true
