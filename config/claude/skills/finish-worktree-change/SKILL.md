@@ -49,7 +49,7 @@ gh pr create --draft --base main --head <branch> --title "<title>" --body "<body
 
 ## Step 5: Generate the PR body
 
-Invoke the `create-pr-description` skill to draft the Why / What / Risk / Verification body for this branch's diff, and use its output as the `--body`. Don't hand-roll a description here — that skill owns the format and the gap-finding questions.
+Invoke the `create-pr-description` skill to draft the body for this branch's diff, and use its output as the `--body`. Expect a few lines with no headings for most changes; that skill decides when a change warrants escalating to its Why / How it works / Risk / Verification headings. Don't hand-roll a description here — it owns the format and the gap-finding questions.
 
 ## Step 6: Offer worktree cleanup
 
