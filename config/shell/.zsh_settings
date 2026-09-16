@@ -1,6 +1,9 @@
 # Set default user to hide host name in some zsh prompt themes
 DEFAULT_USER=jose
 
+# Suppress the aliases from oh-my-zsh's lib/directories.zsh.
+zstyle ':omz:lib:directories' aliases no
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
