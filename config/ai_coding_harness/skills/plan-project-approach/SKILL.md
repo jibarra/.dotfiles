@@ -9,13 +9,13 @@ Produce a high-level approach for a project: *what* we're building, *why*, and *
 
 ## Step 1: Confirm the project and desired outcome
 
-Restate the goal in one or two sentences. If you can't — or the ask is vague — **stop and ask**. Acceptable inputs: a Linear ticket/doc, a description of the desired outcome, or a pointer to the problem area. Don't guess at intent.
+Restate the goal in one or two sentences. If you can't — or the ask is vague — **stop and ask**. Acceptable inputs: an issue or doc, a description of the desired outcome, or a pointer to the problem area. Don't guess at intent.
 
 ## Step 2: Gather context
 
 Search across sources in parallel so the plan is grounded in reality, not assumption — especially the current-system deficiencies.
 
-- **Linear** — related issues/epics/docs (`list_issues`, `list_documents`, `search_documentation`).
+- **Issue tracker, if available** — related issues, epics, and docs.
 - **GitHub** — prior PRs and history (`gh pr list --search`, `gh search code`).
 - **Codebase** — `grep`/`find` for known symbols; the available `Explore`/`explorer` agent for broad/open-ended searches.
 
@@ -74,11 +74,11 @@ Writing rules:
 ## Step 5: Decide where it lives, then present
 
 Ask where the artifact should go — there's no default:
-- **Linear** doc or issue/epic (primary home for planning per the repo's documentation practice),
+- **Issue tracker** doc or issue/epic, if one is available,
 - **Repo markdown** under `ai_project_prompts/` or `doc/`, or
 - **Inline** in the conversation only.
 
-Present the draft, refine with the user, and **only create the artifact (Linear doc, file) with explicit confirmation.**
+Present the draft, refine with the user, and **only create the artifact (issue tracker doc, file) with explicit confirmation.**
 
 ## Guardrails
 

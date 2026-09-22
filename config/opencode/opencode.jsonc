@@ -136,19 +136,9 @@
       "~/.config/opencode/**": "allow",
     }
   },
-  "mcp": {
-    "linear-server": {
-      "type": "remote",
-      "url": "https://mcp.linear.app/mcp"
-    },
-    "rwx": {
-      "type": "local",
-      "command": ["rwx", "mcp", "serve"]
-    }
-  },
   "agent": {
     "generic-coding-changes-planner": {
-      "description": "Generic planner for coding changes. Gathers context across Linear, GitHub, and the codebase, then produces an implementation plan covering architecture decisions, file changes, test strategy, risks, and tradeoffs. Use when the user asks to plan a code change before implementing, or when invoked as the parallel planner from the `plan-coding-changes` skill.",
+      "description": "Generic planner for coding changes. Gathers context from available issue trackers, GitHub, and the codebase, then produces an implementation plan covering architecture decisions, file changes, test strategy, risks, and tradeoffs. Use when the user asks to plan a code change before implementing, or when invoked as the parallel planner from the `plan-coding-changes` skill.",
       "mode": "subagent",
       "model": "anthropic/claude-opus-4-8",
       "prompt": "{file:~/.dotfiles/config/claude/agents/planners/generic-coding-changes-planner.md}"
@@ -199,7 +189,7 @@
       "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/performance-reviewer.md}"
     },
     "product-manager-reviewer": {
-      "description": "Reviews code changes from a product manager's perspective. Pulls the linked Linear issue(s) and checks whether the change delivers on the stated outcome, covers user-facing cases, and gets copy/voice right. Use as one reviewer in a multi-reviewer panel.",
+      "description": "Reviews code changes from a product manager's perspective. Reads linked issue(s) when available and checks whether the change delivers on the stated outcome, covers user-facing cases, and gets copy/voice right. Use as one reviewer in a multi-reviewer panel.",
       "mode": "subagent",
       "model": "anthropic/claude-opus-4-8",
       "prompt": "{file:~/.dotfiles/config/claude/agents/reviewers/product-manager-reviewer.md}"

@@ -35,7 +35,7 @@ Launch all eight reviewers in parallel using the current harness's subagent tool
 4. `performance-reviewer` — N+1, indexes, caching, scalability
 5. `security-reviewer` — injection, auth, authz, data exposure, secrets
 6. `senior-engineer-reviewer` — scope, restraint, merge-worthiness, test quality
-7. `product-manager-reviewer` — outcome alignment, copy, user impact (pulls linked Linear issue)
+7. `product-manager-reviewer` — outcome alignment, copy, user impact (reads linked issue when available)
 8. `jose-reviewer` — Jose's personal review, opinionated; findings carry the most weight
 
 Give each reviewer the same context package plus an explicit prompt describing what they need to review. Don't send a one-line prompt — send enough detail that the reviewer could run without you.

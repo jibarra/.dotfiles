@@ -1,6 +1,6 @@
 ---
 name: plan-coding-changes
-description: Default planning workflow for any code change. Confirm what's being changed, gather context across Linear/GitHub/codebase, produce a reconciled plan, then implement. Use for every code change — small, large, or in-between. For high-level project framing rather than line-level implementation, use plan-project-approach.
+description: Default planning workflow for any code change. Confirm what's being changed, gather context from available issue trackers, GitHub, and the codebase, produce a reconciled plan, then implement. Use for every code change — small, large, or in-between. For high-level project framing rather than line-level implementation, use plan-project-approach.
 ---
 
 # Plan coding changes
@@ -12,7 +12,7 @@ Plan before writing code. Always. Even small changes go through this — the ste
 Before doing anything else, confirm you understand the request. If the ask is vague, ambiguous, or you can't restate it back in one sentence — **stop and ask the user** to clarify. Acceptable forms of clarification:
 
 - A description of the desired behavior or outcome.
-- A link to a Linear ticket, doc, PR, Slack thread, or other resource.
+- A link to an issue, doc, PR, Slack thread, or other resource.
 - An example of input/output, or a pointer to the offending code.
 
 Don't guess at intent. A 30-second clarification beats a 30-minute plan against the wrong target.
@@ -21,8 +21,7 @@ Don't guess at intent. A 30-second clarification beats a 30-minute plan against 
 
 Search across available sources to understand the problem. Run searches in parallel where possible.
 
-- **Linear** — existing issues, related work, blockers, design docs
-  - Linear MCP tools: `list_issues` (filter by query/team/state), `list_documents`, `search_documentation`. Discover the exposed tool names in the current harness; prefixes differ between Claude Code, opencode, and Codex.
+- **Issue tracker, if available** — existing issues, related work, blockers, design docs. Use the tools exposed by the current harness.
 - **GitHub** — related PRs, prior code, history
   - `gh pr list --search "<term>"`, `gh search prs "<term>"`
   - `gh search code "<term>"` for cross-repo code search
@@ -31,14 +30,14 @@ Search across available sources to understand the problem. Run searches in paral
   - the Datadog MCP search tools (e.g. `search_datadog_logs`, `search_datadog_monitors`)
 
 Summarize findings for the user. Scale the summary to the size of the change:
-- **Trivial change** — a few lines is enough ("Found the function at `app/foo.rb:42`, no related Linear issues, no recent PRs touching it").
+- **Trivial change** — a few lines is enough ("Found the function at `app/foo.rb:42`, no related issues, no recent PRs touching it").
 - **Larger change** — no cap. Cover everything that matters: prior work, related systems, constraints, open questions.
 
 Ask if anything is missing or wrong before moving on.
 
-## Step 3: Find or create the Linear issue
+## Step 3: Find or create an issue when an issue tracker is available
 
-- Search Linear for an existing issue first. If one exists, link it.
+- Search the available issue tracker for an existing issue first. If one exists, link it.
 - If none turns up, **ask the user before creating one** — they may have an existing ticket they forgot to link, or may not want a ticket for this work at all. Surface what you searched for so they can correct the search if you missed it.
 - Only after confirmation, create the issue with a tight description (2–3 sentences).
 - Don't transition state (e.g. to In Progress) without explicit confirmation.
@@ -73,5 +72,5 @@ Present the merged plan to the user. Wait for green light before implementing (e
 - **Always run this flow**, even for one-line changes. The cost is small; the cost of skipping context is not.
 - **Don't skip Step 1.** If you can't restate the request in one sentence, ask.
 - **Don't skip Step 4.** A multi-agent plan against the wrong scope is wasted effort.
-- **Don't create or transition Linear issues** without explicit confirmation — even when no existing issue surfaces in search.
+- **Don't create or transition issues** without explicit confirmation — even when no existing issue surfaces in search.
 - **Don't substitute your own opinion** when the two plans diverge — surface the disagreement to the user.
