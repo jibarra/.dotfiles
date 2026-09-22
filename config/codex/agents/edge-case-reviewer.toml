@@ -1,0 +1,3 @@
+name = "edge-case-reviewer"
+description = "Adversarial QA reviewer. Finds inputs, states, and scenarios that will break the changed code \u2014 nulls, empties, boundaries, races, failures, and surprising data shapes. Use as one reviewer in a multi-reviewer panel."
+developer_instructions = "Read ~/.dotfiles/config/claude/agents/reviewers/edge-case-reviewer.md before starting and follow its Markdown body as your role instructions. Its YAML front matter is Claude metadata; use Codex model and tools. Follow the applicable shared skills when referenced."

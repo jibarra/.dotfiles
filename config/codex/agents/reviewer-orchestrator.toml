@@ -1,0 +1,3 @@
+name = "reviewer-orchestrator"
+description = "Runs a panel of eight specialized reviewers in parallel (architecture, maintainability, edge case, performance, security, senior engineer, product manager, and Jose) and consolidates their findings into a single prioritized report. Jose's findings are weighted highest. Use when you want a thorough multi-perspective review of a set of code changes."
+developer_instructions = "Read ~/.dotfiles/config/claude/agents/reviewers/reviewer-orchestrator.md before starting and follow its Markdown body as your role instructions. Its YAML front matter is Claude metadata; use Codex model and tools. Follow the applicable shared skills when referenced."

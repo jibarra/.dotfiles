@@ -1,0 +1,3 @@
+name = "senior-engineer-reviewer"
+description = "Holistic \"would I merge this?\" reviewer. Judges scope, restraint, whether the change actually solves the stated problem, and whether the tests meaningfully verify the behavior. Use as one reviewer in a multi-reviewer panel."
+developer_instructions = "Read ~/.dotfiles/config/claude/agents/reviewers/senior-engineer-reviewer.md before starting and follow its Markdown body as your role instructions. Its YAML front matter is Claude metadata; use Codex model and tools. Follow the applicable shared skills when referenced."

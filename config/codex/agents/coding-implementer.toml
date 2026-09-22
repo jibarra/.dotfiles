@@ -1,0 +1,3 @@
+name = "coding-implementer"
+description = "Autonomously implements an already-approved coding plan inside a prepared git worktree \u2014 writes the code, runs the test suite, and iterates until the plan is satisfied or it hits a blocker. Returns a summary of what changed and the test status. Use when invoked by the ship-coding-change skill, or whenever a fully-specified plan and an existing worktree are handed off for hands-off implementation."
+developer_instructions = "Read ~/.dotfiles/config/claude/agents/implementers/coding-implementer.md before starting and follow its Markdown body as your role instructions. Its YAML front matter is Claude metadata; use Codex model and tools. Follow the applicable shared skills when referenced."

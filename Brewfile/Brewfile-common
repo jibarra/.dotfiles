@@ -20,6 +20,7 @@ cask "alfred"
 cask "balance-lock"
 cask "claude"
 cask "claude-code"
+cask "codex"
 cask "firefox"
 cask "flux-app"
 cask "google-chrome"
@@ -37,4 +38,3 @@ mas "GoodLinks", id: 1474335294
 mas "Monodraw", id: 920404675
 mas "SnippetsLab", id: 1006087419
 mas "Xcode", id: 497799835
-

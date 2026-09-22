@@ -1,0 +1,3 @@
+name = "architecture-reviewer"
+description = "Reviews code changes for architectural soundness. Focuses on layering, module boundaries, coupling, abstraction choices, and adherence to the codebase's architectural patterns (MVCQ, command/query split). Use as one reviewer in a multi-reviewer panel."
+developer_instructions = "Read ~/.dotfiles/config/claude/agents/reviewers/architecture-reviewer.md before starting and follow its Markdown body as your role instructions. Its YAML front matter is Claude metadata; use Codex model and tools. Follow the applicable shared skills when referenced."

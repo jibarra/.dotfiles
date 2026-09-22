@@ -19,7 +19,7 @@ Look for an issue identifier in:
 4. Any explicit issue IDs passed in the invocation
 
 When you find an identifier, pull the issue using the Linear MCP:
-- `mcp__linear-server__get_issue` with the identifier
+- The current harness's Linear MCP `get_issue` tool with the identifier
 - If it has a parent, also pull the parent for broader context
 - If it has linked documentation, also pull in the documentation
 - Read: the outcome, success criteria, the problem statement, any linked customer needs

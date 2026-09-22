@@ -24,7 +24,11 @@ This setup is currently geared toward macOS and has not been tested on Linux. Kn
 
 # AI coding agents
 
-Note that I have separate configs for AI coding agents (e.g. Claude and opencode). Since harness instructions aren't standardized, I've chosen to keep that stored separately as well. For example, Claude has its own setup for agents, skills, etc. For now, I'm dependent on other coding agents reading this but if they become more standardized, it can be generalized into a single source directory.
+Claude Code, opencode, and Codex share instructions from `config/ai_coding_harness/AGENTS.md` and skills from `config/ai_coding_harness/skills/`. Harness-specific agents, settings, hooks, and plugins remain in their own config folders.
+
+`./install.sh` links `~/.claude/skills` and `~/.agents/skills` to the shared skills folder. Codex reads the latter; opencode discovers both automatically. The installer backs up any existing `~/.agents/skills` directory before replacing it with the link. Codex agent definitions in `config/codex/agents/` point to the shared Markdown prompts, so prompt edits take effect in every harness.
+
+The Codex section of `scripts/link_dotfiles.sh` links shared instructions, hooks, and agents. It leaves `~/.codex/config.toml` entirely local and does not create or modify it. Configure personal settings and MCP servers there, then start a new Codex session to pick up instructions, skills, and agents. Codex may ask you to trust the notification hooks on first use.
 
 ## TODOs
 
@@ -40,4 +44,3 @@ Note that I have separate configs for AI coding agents (e.g. Claude and opencode
 
 - Nerd fonts (icons): https://www.nerdfonts.com/font-downloads
 - Font choosing flow: https://www.codingfont.com/
-

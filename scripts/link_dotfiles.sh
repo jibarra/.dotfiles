@@ -43,7 +43,7 @@ ln -F -s ~/.dotfiles/config/ai_coding_harness/AGENTS.md ~/.claude/CLAUDE.md
 ln -F -s ~/.dotfiles/config/claude/settings.json ~/.claude/settings.json
 ln -F -s ~/.dotfiles/config/claude/commands ~/.claude/commands
 ln -F -s ~/.dotfiles/config/claude/hooks ~/.claude/hooks
-ln -F -s ~/.dotfiles/config/claude/skills ~/.claude/skills
+ln -F -s ~/.dotfiles/config/ai_coding_harness/skills ~/.claude/skills
 ln -F -s ~/.dotfiles/config/claude/agents ~/.claude/agents
 
 # opencode config
@@ -60,3 +60,21 @@ ln -F -s ~/.dotfiles/config/opencode/opencode-notifier.json ~/.config/opencode/o
 mkdir ~/.config/opencode/plugins
 ln -F -s ~/.dotfiles/config/opencode/plugins/notifier-path-resolver.js ~/.config/opencode/plugins/notifier-path-resolver.js
 
+# Codex config
+mkdir -p ~/.dotfiles/backups/"${now}"/codex
+mkdir -p ~/.codex ~/.agents
+for item in AGENTS.md hooks.json agents; do
+  if [[ -e ~/.codex/$item || -L ~/.codex/$item ]]; then
+    mv ~/.codex/$item ~/.dotfiles/backups/"${now}"/codex
+  fi
+done
+ln -F -s ~/.dotfiles/config/ai_coding_harness/AGENTS.md ~/.codex/AGENTS.md
+ln -F -s ~/.dotfiles/config/codex/hooks.json ~/.codex/hooks.json
+ln -F -s ~/.dotfiles/config/codex/agents ~/.codex/agents
+
+# Codex and opencode read the same shared skills through ~/.agents/skills.
+mkdir -p ~/.dotfiles/backups/"${now}"/agents
+if [[ -e ~/.agents/skills || -L ~/.agents/skills ]]; then
+  mv ~/.agents/skills ~/.dotfiles/backups/"${now}"/agents
+fi
+ln -F -s ~/.dotfiles/config/ai_coding_harness/skills ~/.agents/skills

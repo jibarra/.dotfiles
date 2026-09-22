@@ -27,7 +27,7 @@ Assemble a **shared context package** to pass to each reviewer:
 
 ## Step 2: Fan out in parallel
 
-Launch all eight reviewers in a single message (parallel Task tool calls):
+Launch all eight reviewers in parallel using the current harness's subagent tool (in batches if its concurrency limit requires it):
 
 1. `architecture-reviewer` — layering, boundaries, coupling, patterns
 2. `maintainability-reviewer` — naming, clarity, duplication, structure
