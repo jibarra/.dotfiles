@@ -30,6 +30,7 @@ Once scope is clear, pull everything that's already knowable before bothering th
 - **Commit messages** — `git log main..HEAD --oneline` (often the clearest statement of intent).
 - **Existing PR metadata** — if a PR exists, `gh pr view <number>` for title, current body, and linked issues. If the user is *updating* a description, start from what's there.
 - **Linked issue** — scan the branch name, commits, and PR body for identifiers (e.g. `INS-123`, `PROJ-456`). If found, read it through an available issue tracker or linked page to source the *why*.
+- **Generated artifacts** — collect the URLs of any artifacts published this session for this change (claude.ai artifact links such as a walkthrough, review report, or investigation page). Don't invent any.
 
 ## Step 3: Identify gaps and ask the user
 
@@ -79,7 +80,7 @@ Never invent a heading outside this set — no `Background`, `Implementation Det
 
 - **Diagram** — mermaid, which GitHub renders natively in PR bodies. Use one when the change alters control flow, data flow, or state across components *and* explaining the ordering would otherwise take a paragraph. Never for a one-line fix.
 - **Table** — for before/after behavior, a set of related cases, or a flag/config matrix.
-- **Links** — code inside the diff as `path/to/file.rb:42`. Code outside the diff as a GitHub permalink pinned to a SHA, never a branch, so it can't rot. Tickets as `Closes INS-123`. Proof as the actual dashboard or query URL.
+- **Links** — code inside the diff as `path/to/file.rb:42`. Code outside the diff as a GitHub permalink pinned to a SHA, never a branch, so it can't rot. Tickets as `Closes INS-123`. Proof as the actual dashboard or query URL. Generated artifacts on a line of their own at the very top of the body, before the why (or directly under `## Why` when headings are used), e.g. `Walkthrough: <url>`. Those lines don't count toward the budget.
 
 ### Budget
 
@@ -207,7 +208,7 @@ N/A
 
 Show the draft. If you escalated to headings, name the condition that justified it. Then offer to apply it — only with explicit confirmation:
 
-- Existing PR → `gh pr edit <number> --body "..."`.
+- Existing PR → `gh pr edit <number> --body "..."`. Keep any artifact links already in the body.
 - No PR yet → offer to create it (`gh pr create`), but confirm title and base first.
 
 Don't edit or create the PR without a clear go-ahead.
@@ -215,6 +216,7 @@ Don't edit or create the PR without a clear go-ahead.
 ## Guardrails
 
 - **Start headingless.** Headings are opt-in, gated, and drawn only from the closed set of four. Never invent one; never include one you can't fill with substance.
+- **Artifacts go first.** If this session generated artifacts for the change, link them at the top of the body.
 - **Prose is the fallback.** If a diagram, table, or link conveys it, that's what ships.
 - **Don't guess the why.** If the motivation isn't in the ticket/PR/commits, ask. A missing why is the most common reason a description fails its job.
 - **Don't assert "unused" / "safe" / "no impact" without a link.** Ask for the proof; if there is none, soften the claim.
